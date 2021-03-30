@@ -62,7 +62,7 @@
                 android:layout_margin="5dp"
                 android:background="#f00"
                 android:drawableLeft="@drawable/ic_play_aleatorio"
-                android:hint="Escuchar cualquiera"
+                android:hint="Escuchar todos"
                 android:textColorHint="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"></Button>
