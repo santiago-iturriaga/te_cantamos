@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showText("Ayuda!");
+                Intent i = new Intent(MainActivity.this, AyudaActivity.class);
+                startActivity(i);
             }
         });
 
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        
         if (resultCode == RESULT_OK) {
             switch (MODO.values()[requestCode]) {
                 case SIN_ACCION:

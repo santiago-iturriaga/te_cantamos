@@ -3,6 +3,7 @@
     <string name="title_activity_login">Inicio de sesión</string>
     <string name="title_activity_lista_canciones">Lista de canciones</string>
     <string name="title_activity_ayuda">Instructivo</string>
+    <string name="title_activity_player">Reproductor musical</string>
     <string name="ayuda_text">
         "Material is the metaphor.\n\n"
 

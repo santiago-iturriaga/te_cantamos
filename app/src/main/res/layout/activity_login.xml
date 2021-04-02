@@ -10,7 +10,7 @@
         android:id="@+id/imgLogin"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@color/black"
+        android:src="@color/white"
         android:layout_centerHorizontal="true"/>
 
     <LinearLayout
