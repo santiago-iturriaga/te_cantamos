@@ -37,7 +37,7 @@
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnLoginAceptar"
+        android:id="@+id/loginButtonAceptar"
         android:text="Aceptar" />
 </RelativeLayout>
 

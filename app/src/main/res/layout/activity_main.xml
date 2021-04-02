@@ -21,7 +21,7 @@
             android:padding="20dp">
 
             <Button
-                android:id="@+id/buttonAyuda"
+                android:id="@+id/mainButtonAyuda"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
@@ -34,11 +34,11 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/buttonListaCanciones"
+                android:id="@+id/mainButtonListaCanciones"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/buttonAyuda"
+                android:layout_toRightOf="@id/mainButtonAyuda"
                 android:background="#f00"
                 android:drawableTop="@drawable/ic_lista_canciones"
                 android:hint="Lista de canciones"
@@ -56,7 +56,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/buttonPlayAleatorio"
+                android:id="@+id/mainButtonPlayAleatorio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -68,7 +68,7 @@
                 android:textStyle="bold"></Button>
 
             <Button
-                android:id="@+id/buttonPlayFavoritos"
+                android:id="@+id/mainButtonPlayFavoritos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -80,7 +80,7 @@
                 android:textStyle="bold"></Button>
 
             <Button
-                android:id="@+id/buttonPlaySoloUna"
+                android:id="@+id/mainButtonPlaySoloUna"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -92,7 +92,7 @@
                 android:textStyle="bold"></Button>
 
             <Button
-                android:id="@+id/buttonPlayElegidas"
+                android:id="@+id/mainButtonPlayElegidas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"

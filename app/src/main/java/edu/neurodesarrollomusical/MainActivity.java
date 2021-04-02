@@ -11,11 +11,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final int RESULT_LISTA_CANCIONES = 100;
-    private final int RESULT_ELEGIDAS = 101;
-    private final int RESULT_SOLO_UNA = 102;
+    public enum MODO {
+        SIN_ACCION,
+        PLAY_CANCIONES_ELEGIDAS
+    }
 
-    private void showText(String text){
+    private void showText(String text) {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button buttonAyuda = findViewById(R.id.buttonAyuda);
+        Button buttonAyuda = findViewById(R.id.mainButtonAyuda);
         buttonAyuda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Button buttonPlayAleatorio = findViewById(R.id.buttonPlayAleatorio);
+        Button buttonPlayAleatorio = findViewById(R.id.mainButtonPlayAleatorio);
         buttonPlayAleatorio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,35 +42,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button buttonListaCanciones = findViewById(R.id.buttonListaCanciones);
+        Button buttonListaCanciones = findViewById(R.id.mainButtonListaCanciones);
         buttonListaCanciones.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showText("Lista de canciones!");
-                Intent i = new Intent (MainActivity.this, ListaCancionesActivity.class);
-                i.putExtra("modo", RESULT_LISTA_CANCIONES);
-                startActivityForResult(i, RESULT_LISTA_CANCIONES);
+                Intent i = new Intent(MainActivity.this, ListaCancionesActivity.class);
+                i.putExtra("MODO", ListaCancionesActivity.MODO.LISTAR_CANCIONES.ordinal());
+                startActivityForResult(i, MODO.SIN_ACCION.ordinal());
             }
         });
 
-        Button buttonPlayElegidas = findViewById(R.id.buttonPlayElegidas);
+        Button buttonPlayElegidas = findViewById(R.id.mainButtonPlayElegidas);
         buttonPlayElegidas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showText("Play elegidas!");
-                Intent i = new Intent (MainActivity.this, ListaCancionesActivity.class);
-                i.putExtra("modo", RESULT_ELEGIDAS);
-                startActivityForResult(i, RESULT_ELEGIDAS);
+                Intent i = new Intent(MainActivity.this, ListaCancionesActivity.class);
+                i.putExtra("MODO", ListaCancionesActivity.MODO.ELEGIR_CANCIONES_PARA_INTERVENCION.ordinal());
+                startActivityForResult(i, MODO.PLAY_CANCIONES_ELEGIDAS.ordinal());
             }
         });
-        Button buttonPlaySoloUna = findViewById(R.id.buttonPlaySoloUna);
+        Button buttonPlaySoloUna = findViewById(R.id.mainButtonPlaySoloUna);
         buttonPlaySoloUna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showText("Play solo una!");
-                Intent i = new Intent (MainActivity.this, ListaCancionesActivity.class);
-                i.putExtra("modo", RESULT_SOLO_UNA);
-                startActivityForResult(i, RESULT_SOLO_UNA);
+                Intent i = new Intent(MainActivity.this, ListaCancionesActivity.class);
+                i.putExtra("MODO", ListaCancionesActivity.MODO.ELEGIR_UNA_CANCION_PARA_INTERVENCION.ordinal());
+                startActivityForResult(i, MODO.PLAY_CANCIONES_ELEGIDAS.ordinal());
             }
         });
     }
@@ -77,23 +78,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK){
-            Intent i = new Intent(MainActivity.this, PlayerActivity.class);
-            switch (resultCode){
-                case RESULT_ELEGIDAS:
-                    //leer las canciones seleccionadas que vienen en "data"
-                    //abrir el player desde acá pasando por el intent las canciones seleccionadas
-                    i.putExtra("modo", RESULT_ELEGIDAS);
+        if (resultCode == RESULT_OK) {
+            switch (MODO.values()[requestCode]) {
+                case SIN_ACCION:
+                    // Nada para hacer?
                     break;
-                case RESULT_LISTA_CANCIONES:
+                case PLAY_CANCIONES_ELEGIDAS:
                     //leer las canciones seleccionadas que vienen en "data"
                     //abrir el player desde acá pasando por el intent las canciones seleccionadas
-                    i.putExtra("modo", RESULT_LISTA_CANCIONES);
-                    break;
-                case RESULT_SOLO_UNA:
-                    //leer las canciones seleccionadas que vienen en "data"
-                    //abrir el player desde acá pasando por el intent las canciones seleccionadas
-                    i.putExtra("modo", RESULT_SOLO_UNA);
+                    //i.putExtra("modo", RESULT_SOLO_UNA);
+
+                    Bundle returnedResult = data.getExtras();
+
                     break;
             }
         }

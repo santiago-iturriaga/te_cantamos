@@ -1,16 +1,9 @@
 <resources>
-    <string name="app_name">Neuro desarrollo musical</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="title_activity_lista_canciones">ScrollingActivity</string>
-    <string name="large_text">
+    <string name="app_name">Mamá te canta</string>
+    <string name="title_activity_login">Inicio de sesión</string>
+    <string name="title_activity_lista_canciones">Lista de canciones</string>
+    <string name="title_activity_ayuda">Instructivo</string>
+    <string name="ayuda_text">
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
@@ -99,5 +92,4 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="action_settings">Settings</string>
 </resources>
