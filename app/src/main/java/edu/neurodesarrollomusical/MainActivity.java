@@ -35,12 +35,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         Button buttonPlayAleatorio = findViewById(R.id.mainButtonPlayAleatorio);
         buttonPlayAleatorio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showText("Play aleatorio!");
+                showText("Escuchar todas!");
+                Intent i = new Intent(MainActivity.this, PlayerActivity.class);
+                int canciones[] = {1,2,3,4,5};
+                i.putExtra("CANCIONES", canciones);
+                startActivityForResult(i, MODO.SIN_ACCION.ordinal());
             }
         });
 
