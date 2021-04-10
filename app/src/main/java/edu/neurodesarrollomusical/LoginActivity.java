@@ -8,11 +8,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-
-    private void showText(String text) {
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLoginAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showText("Aceptar");
+                MensajesHelper.showText(v.getContext(), "Aceptar");
             }
         });
     }

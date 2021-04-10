@@ -30,6 +30,9 @@ public class ListaCancionesAdapter extends ArrayAdapter<CancionesController.Canc
         TextView textView = (TextView) rowView.findViewById(R.id.listaCancionesRowTitulo);
         textView.setText(canciones[position].titulo);
 
+        textView = (TextView) rowView.findViewById(R.id.listaCancionesRowAutor);
+        textView.setText(canciones[position].autor);
+
         ImageView imageView = (ImageView) rowView.findViewById(R.id.listaCancionesRowFavorita);
         imageView.setVisibility(View.INVISIBLE);
 

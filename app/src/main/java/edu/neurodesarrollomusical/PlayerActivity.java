@@ -4,17 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Arrays;
 
 public class PlayerActivity extends AppCompatActivity {
+    static final public String EXTRA_CANCIONES = "CANCIONES";
 
-    private void showText(String text) {
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-    }
+    MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,21 +19,37 @@ public class PlayerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_player);
 
         TextView textViewTitulo = findViewById(R.id.playerTextViewTitulo);
+        TextView textViewAutor = findViewById(R.id.playerTextViewAutor);
         TextView textViewLetra = findViewById(R.id.playerTextViewLetra);
 
         Bundle extras = getIntent().getExtras();
-        int[] canciones = extras.getIntArray("CANCIONES");
+        int[] canciones = extras.getIntArray(EXTRA_CANCIONES);
 
-        showText(Arrays.toString(canciones));
+        MensajesHelper.showText(this, Arrays.toString(canciones));
 
         if (canciones.length > 0) {
             CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancion(canciones[0]);
             if (c != null) {
                 textViewTitulo.setText(c.titulo);
+                textViewAutor.setText(c.autor);
                 textViewLetra.setText(c.letra);
-                MediaPlayer ring = MediaPlayer.create(PlayerActivity.this, c.resourceId);
-                ring.start();
+
+                if (player != null) player.release();
+                player = MediaPlayer.create(PlayerActivity.this, c.resourceId);
+                player.start();
             }
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        player.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        player.start();
     }
 }

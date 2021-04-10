@@ -17,8 +17,17 @@
         android:id="@+id/listaCancionesRowTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="..."
-        android:textSize="20dp"
+        android:text="... esta es una canción ..."
+        android:textSize="24dp"
+        android:layout_toRightOf="@id/listaCancionesRowIcono"/>
+
+    <TextView
+        android:id="@+id/listaCancionesRowAutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="... esta es una canción ..."
+        android:textSize="16dp"
+        android:layout_below="@id/listaCancionesRowTitulo"
         android:layout_toRightOf="@id/listaCancionesRowIcono"/>
 
     <ImageView
@@ -26,5 +35,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_cancion_favorita"
-        android:layout_toRightOf="@id/listaCancionesRowTitulo"/>
+        android:layout_alignParentEnd="true"/>
 </RelativeLayout>

@@ -93,16 +93,22 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="cancion0_titulo">cancion1</string>
+    <string name="cancion0_titulo">cancion0</string>
+    <string name="cancion0_autor">los escarabajos</string>
     <string name="cancion0_letra">esta es la letra blu blu blu 00</string>
     <string name="cancion1_titulo">cancion1</string>
+    <string name="cancion1_autor">jimena arroz</string>
     <string name="cancion1_letra">esta es la letra blu blu blu 01</string>
     <string name="cancion2_titulo">cancion2</string>
+    <string name="cancion2_autor">biyork</string>
     <string name="cancion2_letra">esta es la letra blu blu blu 02</string>
     <string name="cancion3_titulo">cancion3</string>
+    <string name="cancion3_autor">el rejilla</string>
     <string name="cancion3_letra">esta es la letra blu blu blu 03</string>
     <string name="cancion4_titulo">cancion4</string>
+    <string name="cancion4_autor">las piedras rodantes</string>
     <string name="cancion4_letra">esta es la letra blu blu blu 04</string>
     <string name="cancion5_titulo">cancion5</string>
+    <string name="cancion5_autor">los pancreas</string>
     <string name="cancion5_letra">esta es la letra blu blu blu 05</string>
 </resources>

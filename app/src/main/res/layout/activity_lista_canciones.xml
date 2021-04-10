@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ListaCancionesActivity">
 
-
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@color/white"
-        android:dividerHeight="4sp"
-        android:padding="8dp" />
+        android:dividerHeight="0sp"
+        android:padding="16dp" />
 </RelativeLayout>
