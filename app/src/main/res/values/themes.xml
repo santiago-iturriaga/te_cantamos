@@ -18,7 +18,7 @@
         <item name="android:background">@color/background</item>
     </style>
 
-    <style name="Theme.NeuroDesarrolloMusical.NoActionBar">
+    <style name="Theme.NeuroDesarrolloMusical.NoActionBar" parent="Theme.NeuroDesarrolloMusical">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

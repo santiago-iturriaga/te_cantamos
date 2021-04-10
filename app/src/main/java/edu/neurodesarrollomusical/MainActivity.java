@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         buttonAyuda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                v.setPressed(true);
                 Intent i = new Intent(MainActivity.this, AyudaActivity.class);
                 startActivity(i);
             }

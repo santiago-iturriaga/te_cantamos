@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="canciones_cant">6</integer>
+
+    <string name="cancion0_titulo">cancion0</string>
+    <string name="cancion0_autor">los escarabajos</string>
+    <string name="cancion0_letra">Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\n
+        Integer ac felis gravida nulla fermentum suscipit vestibulum a massa.\n\n
+        Donec porta gravida nunc, ut lobortis lectus sagittis vel.\n\n
+        \n\n
+        Suspendisse vel turpis et nunc pellentesque pulvinar.\n\n
+        Etiam magna ipsum, dictum at purus ac, iaculis tempor metus.\n\n
+        Integer pretium ac libero et vehicula.\n\n
+        Nam efficitur ex mauris, non finibus est scelerisque non.\n\n
+        \n\n
+        Mauris maximus ligula felis, non aliquet sem aliquam non.\n\n
+        Praesent iaculis risus eget euismod volutpat.\n\n
+        Etiam mauris leo, dictum vel fermentum eu, consequat vehicula urna.\n\n
+        Donec a sapien sed lacus tristique ultricies at dapibus neque.\n\n
+        \n\n
+        Donec eleifend nunc sed interdum porttitor.\n\n
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\n\n
+        Integer eu vehicula urna, id iaculis lacus. </string>
+
+
+    <string name="cancion1_titulo">cancion1</string>
+    <string name="cancion1_autor">jimena arroz</string>
+    <string name="cancion1_letra">Duis feugiat vehicula eleifend.\n\n
+        Maecenas gravida nisl eget nisl interdum sollicitudin.\n\n
+        In sit amet quam felis.\n\n
+        Aliquam semper libero et lacinia rutrum.\n\n
+        Donec at consectetur leo.\n\n
+        Vestibulum suscipit tortor nec facilisis vehicula.\n\n
+        Quisque efficitur auctor lobortis. </string>
+
+
+    <string name="cancion2_titulo">cancion2</string>
+    <string name="cancion2_autor">biyork</string>
+    <string name="cancion2_letra">Sed nec purus cursus, ultricies ex non, blandit mauris.\n\n
+        Nam condimentum, ante sit amet rutrum tempor, risus odio luctus leo, non luctus diam urna nec leo.\n\n
+        Donec nunc leo, sodales eget dolor a, porta feugiat metus.\n\n
+        Aliquam aliquet ante eget felis interdum, efficitur venenatis tortor aliquet.\n\n
+        \n\n
+        Sed arcu libero, egestas et massa vel, eleifend fermentum metus.\n\n
+        Integer semper purus at mauris mollis condimentum a ac eros.\n\n
+        Sed sed maximus leo. </string>
+
+
+    <string name="cancion3_titulo">cancion3</string>
+    <string name="cancion3_autor">el rejilla</string>
+    <string name="cancion3_letra">Nulla facilisi.
+        Curabitur porttitor sem nec porta efficitur.\n\n
+        Duis aliquam dui orci, eu interdum leo placerat mattis.\n\n
+        Nunc nulla quam, consequat vel malesuada quis, volutpat id justo.\n\n
+        Suspendisse condimentum augue enim, ac posuere arcu sagittis vitae.\n\n
+        \n\n
+        Nunc facilisis tincidunt neque, interdum sodales ex aliquam vel.\n\n
+        Interdum et malesuada fames ac ante ipsum primis in faucibus. </string>
+
+
+    <string name="cancion4_titulo">cancion4</string>
+    <string name="cancion4_autor">las piedras rodantes</string>
+    <string name="cancion4_letra">Aenean eu consequat velit, at accumsan neque.\n\n
+        Maecenas fringilla aliquam quam, sit amet sollicitudin ex posuere ut.\n\n
+        Nam quis pretium orci, sed mollis neque.\n\n
+        Donec venenatis lectus justo, vitae feugiat massa faucibus id.\n\n
+        Etiam rhoncus mauris massa, quis dignissim neque laoreet viverra.\n\n
+        \n\n
+        Donec pretium leo diam, id aliquet libero convallis accumsan.\n\n
+        Cras sodales in est ac viverra.\n\n
+        Cras ullamcorper diam ex, id condimentum purus pretium eu.\n\n
+        Ut nec massa volutpat, congue ligula et, mollis ligula.\n\n
+        Aliquam iaculis magna sit amet tellus sollicitudin rhoncus.\n\n
+        Nullam posuere eleifend leo, et blandit neque pharetra vitae.\n\n
+        \n\n
+        In semper dolor eu velit mattis pulvinar vel non tellus.\n\n
+        Phasellus euismod neque id semper viverra.\n\n
+        Mauris a est non mi sagittis laoreet in vel erat. </string>
+
+
+    <string name="cancion5_titulo">cancion5</string>
+    <string name="cancion5_autor">los pancreas</string>
+    <string name="cancion5_letra">Nam euismod pharetra odio a pulvinar.\n\n
+        Praesent at egestas mauris.\n\n
+        Suspendisse commodo consectetur ex eu condimentum.\n\n
+        Donec fermentum tempor augue, id semper diam venenatis quis.\n\n
+        Vivamus condimentum justo sit amet eros pellentesque pellentesque.\n\n
+        Donec viverra laoreet nulla.\n\n
+        Donec cursus, nunc ac aliquam venenatis, lectus justo sodales enim, vitae blandit neque mauris et neque.\n\n
+        \n\n
+        Donec viverra augue a sodales placerat.\n\n
+        Nulla lobortis nunc sed lorem egestas, quis sollicitudin felis placerat.\n\n
+        Etiam pellentesque arcu a eros vulputate, a consectetur tortor rutrum.\n\n
+        Nullam facilisis sem vitae ligula aliquet, eget mattis diam rhoncus.\n\n
+        Nulla semper ipsum non nulla lacinia, et finibus mi finibus.\n\n
+        \n\n
+        Ut metus nulla, gravida ut efficitur vitae, venenatis et quam.\n\n
+        Nunc leo nisl, sollicitudin eu venenatis id, semper nec metus.\n\n
+        Aliquam vel fringilla dolor. </string>
+
+</resources>

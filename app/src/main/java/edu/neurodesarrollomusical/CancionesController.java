@@ -32,7 +32,7 @@ public class CancionesController {
         }
     }
 
-    private static final int NUMERO_CANCIONES = 6;
+    private static int NUMERO_CANCIONES;
     private ArrayList<Cancion> _canciones;
 
     private CancionesController(Context context) {
@@ -40,6 +40,8 @@ public class CancionesController {
         Resources resources = context.getApplicationContext().getResources();
 
         _canciones = new ArrayList<Cancion>();
+
+        NUMERO_CANCIONES = resources.getInteger(R.integer.canciones_cant);
 
         for (int i = 0; i < NUMERO_CANCIONES; i++) {
             Cancion c;

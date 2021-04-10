@@ -4,28 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10sp"
     tools:context=".PlayerActivity">
 
     <TextView
         android:id="@+id/playerTextViewTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player"
         android:layout_centerHorizontal="true"
-        android:textSize="24dp"/>
+        android:text="Player"
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/playerTextViewAutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player"
+        android:layout_below="@id/playerTextViewTitulo"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/playerTextViewTitulo"/>
-
-    <TextView
-        android:id="@+id/playerTextViewLetra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
         android:text="Player"
-        android:layout_centerInParent="true" />
+        android:textSize="14dp" />
+
+    <ScrollView
+        android:id="@+id/playerScrollLetra"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/playerImageViewPlayControl"
+        android:layout_below="@id/playerTextViewAutor">
+
+        <TextView
+            android:id="@+id/playerTextViewLetra"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/teal_700"
+            android:padding="10sp"
+            android:text="Player"
+            android:textSize="16dp" />
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/playerImageViewPlayControl"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="20sp"
+        android:background="@drawable/ic_pause_control" />
+
+    <ImageButton
+        android:id="@+id/playerImageViewNextControl"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/playerImageViewPlayControl"
+        android:background="@drawable/ic_next_control" />
+
+    <ImageButton
+        android:id="@+id/playerImageViewPrevControl"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toLeftOf="@id/playerImageViewPlayControl"
+        android:background="@drawable/ic_previous_control" />
 </RelativeLayout>
