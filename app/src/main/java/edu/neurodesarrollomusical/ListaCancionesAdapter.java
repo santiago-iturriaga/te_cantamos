@@ -95,9 +95,11 @@ public class ListaCancionesAdapter extends ArrayAdapter<CancionesController.Canc
 
     public void setFavorito(ImageView fav, boolean estado) {
         if (estado) {
+            fav.setVisibility(View.VISIBLE);
             fav.setImageResource(R.drawable.ic_cancion_favorita);
         } else {
-            fav.setImageResource(R.drawable.ic_cancion_no_favorita);
+            //fav.setImageResource(R.drawable.ic_cancion_no_favorita);
+            fav.setVisibility(View.INVISIBLE);
         }
     }
 

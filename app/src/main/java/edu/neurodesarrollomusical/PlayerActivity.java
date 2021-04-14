@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Arrays;
@@ -21,8 +22,10 @@ public class PlayerActivity extends AppCompatActivity {
     }
 
     MediaPlayer player;
+    ImageView imageViewFav;
     ImageButton buttonPlayPause, buttonNext, buttonPrev;
-    TextView textViewTitulo, textViewAutor, textViewLetra;
+    TextView textViewTitulo, textViewAutor, textViewLetra, textViewTiempo;
+    LinearLayout layoutProgreso;
 
     int[] canciones;
     int cancion_actual;
@@ -62,9 +65,25 @@ public class PlayerActivity extends AppCompatActivity {
             }
         });
 
+        imageViewFav = findViewById(R.id.playerImageViewFavorita);
+        imageViewFav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cancion_actual >= 0 && canciones != null) {
+                    CancionesController.Cancion c = CancionesController.getInstance(v.getContext()).obtenerCancion(canciones[cancion_actual]);
+                    if (c != null) {
+                        c.es_favorita = !c.es_favorita;
+                        setFavorito(imageViewFav, c.es_favorita);
+                    }
+                }
+            }
+        });
+
+        layoutProgreso = findViewById(R.id.playerLayoutProgreso);
         textViewTitulo = findViewById(R.id.playerTextViewTitulo);
         textViewAutor = findViewById(R.id.playerTextViewAutor);
         textViewLetra = findViewById(R.id.playerTextViewLetra);
+        textViewTiempo = findViewById(R.id.playerTextViewTiempo);
 
         Bundle extras = getIntent().getExtras();
         int modoOrd = extras.getInt(EXTRA_MODO, PlayerActivity.MODO.SOLO_LETRA.ordinal());
@@ -80,6 +99,8 @@ public class PlayerActivity extends AppCompatActivity {
                 buttonPlayPause.setVisibility(View.VISIBLE);
                 buttonNext.setVisibility(View.VISIBLE);
                 buttonPrev.setVisibility(View.VISIBLE);
+                layoutProgreso.setVisibility(View.VISIBLE);
+                textViewTiempo.setVisibility(View.VISIBLE);
                 start();
                 break;
             case SOLO_LETRA:
@@ -91,13 +112,24 @@ public class PlayerActivity extends AppCompatActivity {
                     textViewTitulo.setText(c.titulo);
                     textViewAutor.setText(c.autor);
                     textViewLetra.setText(c.letra);
+                    setFavorito(imageViewFav, c.es_favorita);
                 }
 
+                layoutProgreso.setVisibility(View.INVISIBLE);
+                textViewTiempo.setVisibility(View.INVISIBLE);
                 buttonPlayPause.setVisibility(View.INVISIBLE);
                 buttonNext.setVisibility(View.INVISIBLE);
                 buttonPrev.setVisibility(View.INVISIBLE);
                 stop();
                 break;
+        }
+    }
+
+    public void setFavorito(ImageView fav, boolean estado) {
+        if (estado) {
+            fav.setImageResource(R.drawable.ic_cancion_favorita);
+        } else {
+            fav.setImageResource(R.drawable.ic_cancion_no_favorita);
         }
     }
 
@@ -137,6 +169,7 @@ public class PlayerActivity extends AppCompatActivity {
                     textViewTitulo.setText(c.titulo);
                     textViewAutor.setText(c.autor);
                     textViewLetra.setText(c.letra);
+                    setFavorito(imageViewFav, c.es_favorita);
 
                     player = MediaPlayer.create(PlayerActivity.this, c.resourceId);
                     player.start();

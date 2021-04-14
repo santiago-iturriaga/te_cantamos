@@ -30,7 +30,7 @@
         android:id="@+id/playerScrollLetra"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/playerImageViewPlayControl"
+        android:layout_above="@id/playerLayoutProgreso"
         android:layout_below="@id/playerTextViewAutor"
         android:background="@drawable/bg_letra_cancion">
 
@@ -44,6 +44,51 @@
             android:textSize="16dp" />
     </ScrollView>
 
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:id="@+id/playerLayoutProgreso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/playerImageViewPlayControl">
+        
+        <ImageView
+            android:id="@+id/playerLayoutProgreso1"
+            android:layout_width="24sp"
+            android:layout_height="24sp"
+            android:src="@drawable/ic_play_progreso"/>
+        <ImageView
+            android:id="@+id/playerLayoutProgreso2"
+            android:layout_width="24sp"
+            android:layout_height="24sp"
+            android:src="@drawable/ic_play_progreso"/>
+        <ImageView
+            android:id="@+id/playerLayoutProgreso3"
+            android:layout_width="24sp"
+            android:layout_height="24sp"
+            android:src="@drawable/ic_play_progreso"/>
+        <ImageView
+            android:id="@+id/playerLayoutProgreso4"
+            android:layout_width="24sp"
+            android:layout_height="24sp"
+            android:src="@drawable/ic_play_progreso"/>
+        <ImageView
+            android:id="@+id/playerLayoutProgreso5"
+            android:layout_width="24sp"
+            android:layout_height="24sp"
+            android:src="@drawable/ic_play_progreso"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/playerTextViewTiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/playerImageViewPrevControl"
+        android:layout_marginBottom="15dp"
+        android:text="01:00"
+        android:textSize="20sp"
+        android:layout_marginRight="5sp"/>
+
     <ImageButton
         android:id="@+id/playerImageViewPlayControl"
         android:layout_width="60dp"
@@ -51,7 +96,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20sp"
-        android:layout_marginTop="15sp"
+        android:layout_marginTop="1sp"
         android:layout_marginRight="20sp"
         android:background="@drawable/ic_pause_control" />
 
@@ -72,4 +117,14 @@
         android:layout_marginBottom="10dp"
         android:layout_toLeftOf="@id/playerImageViewPlayControl"
         android:background="@drawable/ic_previous_control" />
+
+    <ImageView
+        android:id="@+id/playerImageViewFavorita"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/playerImageViewNextControl"
+        android:src="@drawable/ic_cancion_no_favorita" />
 </RelativeLayout>

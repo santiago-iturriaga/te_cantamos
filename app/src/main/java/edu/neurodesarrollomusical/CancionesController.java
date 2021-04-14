@@ -10,9 +10,9 @@ public class CancionesController {
     private static CancionesController _instance;
 
     public static CancionesController getInstance(Context context) {
-        //if (_instance == null) {
+        if (_instance == null) {
             _instance = new CancionesController(context);
-        //}
+        }
         return _instance;
     }
 
@@ -21,8 +21,8 @@ public class CancionesController {
         public final String titulo;
         public final String autor;
         public final String letra;
-        public final boolean es_favorita;
         public final int resourceId;
+        public boolean es_favorita;
 
         public Cancion(int id, String titulo, String autor, String letra, boolean es_favorita, int resourceId) {
             this.id = id;
