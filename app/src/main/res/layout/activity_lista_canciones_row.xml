@@ -11,40 +11,49 @@
         android:id="@+id/listaCancionesRowIcono"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_cancion"
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_cancion" />
 
     <TextView
         android:id="@+id/listaCancionesRowTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Esta es una canción..."
-        android:textSize="20dp"
-        android:marqueeRepeatLimit="marquee_forever"
+        android:layout_toRightOf="@id/listaCancionesRowIcono"
         android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
         android:scrollHorizontally="true"
-        android:layout_toRightOf="@id/listaCancionesRowIcono"/>
+        android:text="Esta es una canción..."
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/listaCancionesRowAutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="El autor es..."
-        android:textSize="16dp"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:ellipsize="marquee"
-        android:scrollHorizontally="true"
         android:layout_below="@id/listaCancionesRowTitulo"
-        android:layout_toRightOf="@id/listaCancionesRowIcono"/>
+        android:layout_toRightOf="@id/listaCancionesRowIcono"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:text="El autor es..."
+        android:textSize="16dp" />
+
+    <ImageView
+        android:id="@+id/listaCancionesRowSeleccionado"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/ic_lista_canciones_sel" />
 
     <ImageView
         android:id="@+id/listaCancionesRowFavorita"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/ic_cancion_favorita"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginTop="5dp"/>
+        android:src="@drawable/ic_cancion_no_favorita" />
 </RelativeLayout>

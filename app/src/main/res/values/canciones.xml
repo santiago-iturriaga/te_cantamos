@@ -2,7 +2,7 @@
 <resources>
     <integer name="canciones_cant">6</integer>
 
-    <string name="cancion0_titulo">cancion0</string>
+    <string name="cancion0_titulo">titulo cancion 0</string>
     <string name="cancion0_autor">los escarabajos</string>
     <string name="cancion0_letra">Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\n
         Integer ac felis gravida nulla fermentum suscipit vestibulum a massa.\n\n
@@ -23,8 +23,8 @@
         Integer eu vehicula urna, id iaculis lacus. </string>
 
 
-    <string name="cancion1_titulo">cancion1</string>
-    <string name="cancion1_autor">jimena arroz</string>
+    <string name="cancion1_titulo">titulo cancion 1</string>
+    <string name="cancion1_autor">jaime arroz</string>
     <string name="cancion1_letra">Duis feugiat vehicula eleifend.\n\n
         Maecenas gravida nisl eget nisl interdum sollicitudin.\n\n
         In sit amet quam felis.\n\n
@@ -34,8 +34,8 @@
         Quisque efficitur auctor lobortis. </string>
 
 
-    <string name="cancion2_titulo">cancion2</string>
-    <string name="cancion2_autor">biyork</string>
+    <string name="cancion2_titulo">titulo cancion 2</string>
+    <string name="cancion2_autor">vi york</string>
     <string name="cancion2_letra">Sed nec purus cursus, ultricies ex non, blandit mauris.\n\n
         Nam condimentum, ante sit amet rutrum tempor, risus odio luctus leo, non luctus diam urna nec leo.\n\n
         Donec nunc leo, sodales eget dolor a, porta feugiat metus.\n\n
@@ -46,7 +46,7 @@
         Sed sed maximus leo. </string>
 
 
-    <string name="cancion3_titulo">cancion3</string>
+    <string name="cancion3_titulo">una cancion 3</string>
     <string name="cancion3_autor">el rejilla</string>
     <string name="cancion3_letra">Nulla facilisi.
         Curabitur porttitor sem nec porta efficitur.\n\n
@@ -58,7 +58,7 @@
         Interdum et malesuada fames ac ante ipsum primis in faucibus. </string>
 
 
-    <string name="cancion4_titulo">cancion4</string>
+    <string name="cancion4_titulo">titulo cancion 4</string>
     <string name="cancion4_autor">las piedras rodantes</string>
     <string name="cancion4_letra">Aenean eu consequat velit, at accumsan neque.\n\n
         Maecenas fringilla aliquam quam, sit amet sollicitudin ex posuere ut.\n\n
@@ -78,7 +78,7 @@
         Mauris a est non mi sagittis laoreet in vel erat. </string>
 
 
-    <string name="cancion5_titulo">cancion5</string>
+    <string name="cancion5_titulo">titulo cancion 5</string>
     <string name="cancion5_autor">los pancreas</string>
     <string name="cancion5_letra">Nam euismod pharetra odio a pulvinar.\n\n
         Praesent at egestas mauris.\n\n

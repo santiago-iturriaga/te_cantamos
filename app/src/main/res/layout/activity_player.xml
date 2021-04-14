@@ -23,20 +23,22 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20sp"
         android:text="Player"
-        android:textSize="14dp" />
+        android:textSize="14dp"
+        android:textStyle="italic"/>
 
     <ScrollView
         android:id="@+id/playerScrollLetra"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/playerImageViewPlayControl"
-        android:layout_below="@id/playerTextViewAutor">
+        android:layout_below="@id/playerTextViewAutor"
+        android:background="@drawable/bg_letra_cancion">
 
         <TextView
             android:id="@+id/playerTextViewLetra"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/teal_700"
+            android:background="#07000000"
             android:padding="10sp"
             android:text="Player"
             android:textSize="16dp" />

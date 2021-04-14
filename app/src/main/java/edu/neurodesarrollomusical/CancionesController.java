@@ -21,13 +21,15 @@ public class CancionesController {
         public final String titulo;
         public final String autor;
         public final String letra;
+        public final boolean es_favorita;
         public final int resourceId;
 
-        public Cancion(int id, String titulo, String autor, String letra, int resourceId) {
+        public Cancion(int id, String titulo, String autor, String letra, boolean es_favorita, int resourceId) {
             this.id = id;
             this.titulo = titulo;
             this.autor = autor;
             this.letra = letra;
+            this.es_favorita = es_favorita;
             this.resourceId = resourceId;
         }
     }
@@ -49,8 +51,9 @@ public class CancionesController {
             int autorStringId = resources.getIdentifier("cancion" + i + "_autor", "string", packageName);
             int letraStringId = resources.getIdentifier("cancion" + i + "_letra", "string", packageName);
             int mp3RawId = resources.getIdentifier("m" + i, "raw", packageName);
+            boolean es_favorita = false;
             if (tituloStringId != 0 && letraStringId != 0 && mp3RawId != 0) {
-                c = new Cancion(i, resources.getString(tituloStringId), resources.getString(autorStringId), resources.getString(letraStringId), mp3RawId);
+                c = new Cancion(i, resources.getString(tituloStringId), resources.getString(autorStringId), resources.getString(letraStringId), false, mp3RawId);
                 _canciones.add(c);
             }
         }

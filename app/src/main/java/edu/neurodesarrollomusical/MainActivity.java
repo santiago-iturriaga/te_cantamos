@@ -35,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
         buttonPlayAleatorio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, PlayerActivity.class);
                 int canciones[] = {0,1,2,3,4,5};
+                Intent i = new Intent(MainActivity.this, PlayerActivity.class);
+                i.putExtra(PlayerActivity.EXTRA_MODO, PlayerActivity.MODO.INTERVENCION.ordinal());
                 i.putExtra(PlayerActivity.EXTRA_CANCIONES, canciones);
                 startActivityForResult(i, MODO.SIN_ACCION.ordinal());
             }
@@ -82,13 +83,11 @@ public class MainActivity extends AppCompatActivity {
                     // Nada para hacer?
                     break;
                 case PLAY_CANCIONES_ELEGIDAS:
-                    //leer las canciones seleccionadas que vienen en "RESULT"
-                    //abrir el player desde acá pasando por el intent las canciones seleccionadas
                     int[] elegidas = data.getIntArrayExtra(MainActivity.EXTRA_CANCIONES);
                     Intent i = new Intent(MainActivity.this, PlayerActivity.class);
+                    i.putExtra(PlayerActivity.EXTRA_MODO, PlayerActivity.MODO.INTERVENCION.ordinal());
                     i.putExtra(PlayerActivity.EXTRA_CANCIONES, elegidas);
                     startActivityForResult(i, MODO.SIN_ACCION.ordinal());
-
                     break;
             }
         }

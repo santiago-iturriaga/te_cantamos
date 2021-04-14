@@ -13,6 +13,12 @@ import java.util.Arrays;
 
 public class PlayerActivity extends AppCompatActivity {
     static final public String EXTRA_CANCIONES = "CANCIONES";
+    static final public String EXTRA_MODO = "MODO";
+
+    public enum MODO {
+        INTERVENCION,
+        SOLO_LETRA
+    }
 
     MediaPlayer player;
     ImageButton buttonPlayPause, buttonNext, buttonPrev;
@@ -20,6 +26,7 @@ public class PlayerActivity extends AppCompatActivity {
 
     int[] canciones;
     int cancion_actual;
+    MODO modo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,12 +67,38 @@ public class PlayerActivity extends AppCompatActivity {
         textViewLetra = findViewById(R.id.playerTextViewLetra);
 
         Bundle extras = getIntent().getExtras();
-        canciones = extras.getIntArray(EXTRA_CANCIONES);
-        cancion_actual = 0;
+        int modoOrd = extras.getInt(EXTRA_MODO, PlayerActivity.MODO.SOLO_LETRA.ordinal());
+        modo = PlayerActivity.MODO.values()[modoOrd];
 
-        MensajesHelper.showText(this, Arrays.toString(canciones));
+        //MensajesHelper.showText(this, Arrays.toString(canciones));
 
-        start();
+        switch (modo) {
+            case INTERVENCION:
+                canciones = extras.getIntArray(EXTRA_CANCIONES);
+                cancion_actual = 0;
+
+                buttonPlayPause.setVisibility(View.VISIBLE);
+                buttonNext.setVisibility(View.VISIBLE);
+                buttonPrev.setVisibility(View.VISIBLE);
+                start();
+                break;
+            case SOLO_LETRA:
+                canciones = extras.getIntArray(EXTRA_CANCIONES);
+                cancion_actual = 0;
+
+                CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancion(canciones[cancion_actual]);
+                if (c != null) {
+                    textViewTitulo.setText(c.titulo);
+                    textViewAutor.setText(c.autor);
+                    textViewLetra.setText(c.letra);
+                }
+
+                buttonPlayPause.setVisibility(View.INVISIBLE);
+                buttonNext.setVisibility(View.INVISIBLE);
+                buttonPrev.setVisibility(View.INVISIBLE);
+                stop();
+                break;
+        }
     }
 
     @Override
@@ -97,7 +130,7 @@ public class PlayerActivity extends AppCompatActivity {
     protected void start() {
         stop();
 
-        if (canciones != null) {
+        if (canciones != null && modo == MODO.INTERVENCION) {
             if (canciones.length > 0 && cancion_actual < canciones.length) {
                 CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancion(canciones[cancion_actual]);
                 if (c != null) {

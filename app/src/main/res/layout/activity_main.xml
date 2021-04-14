@@ -12,95 +12,118 @@
         tools:context=".MainActivity">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:padding="20dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/mainButtonAyuda"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/menu_bg_button"
-                android:drawableTop="@drawable/ic_ayuda"
-                android:hint="Ayuda"
-                android:textColorHint="#fff"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:text="Mamá te canta"
+                android:textSize="45dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="cursive"
+                android:layout_toLeftOf="@id/mainImageViewApp"
+                android:gravity="right">
+            </TextView>
 
-            <Button
-                android:id="@+id/mainButtonListaCanciones"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+            <ImageView
+                android:id="@+id/mainImageViewApp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/mainButtonAyuda"
-                android:background="@drawable/menu_bg_button"
-                android:drawableTop="@drawable/ic_lista_canciones"
-                android:hint="Lista de canciones"
-                android:textColorHint="#fff"
-                android:textSize="20sp"
-                android:textStyle="bold"></Button>
+                android:layout_alignParentEnd="true"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_noun_newborn_baby"></ImageView>
         </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/mainButtonListaCanciones"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="2"
-            android:orientation="vertical">
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:background="@drawable/bg_button"
+            android:drawableLeft="@drawable/ic_lista_canciones"
+            android:hint="Lista de canciones"
+            android:textColorHint="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold"></Button>
 
-            <Button
-                android:id="@+id/mainButtonPlayAleatorio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/menu_bg_button"
-                android:drawableLeft="@drawable/ic_play_aleatorio"
-                android:hint="Escuchar todos"
-                android:textColorHint="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"></Button>
+        <Button
+            android:id="@+id/mainButtonPlayAleatorio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:background="@drawable/bg_button"
+            android:drawableLeft="@drawable/ic_play_aleatorio"
+            android:hint="Escuchar todos"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"></Button>
 
-            <Button
-                android:id="@+id/mainButtonPlayFavoritos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/menu_bg_button"
-                android:drawableLeft="@drawable/ic_play_favoritos"
-                android:hint="Escuchar favoritos"
-                android:textColorHint="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"></Button>
+        <Button
+            android:id="@+id/mainButtonPlayFavoritos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:background="@drawable/bg_button"
+            android:drawableLeft="@drawable/ic_play_favoritos"
+            android:hint="Escuchar favoritas"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"></Button>
 
-            <Button
-                android:id="@+id/mainButtonPlaySoloUna"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/menu_bg_button"
-                android:drawableLeft="@drawable/ic_play_solo_una"
-                android:hint="Escuchar solo una"
-                android:textColorHint="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"></Button>
+        <Button
+            android:id="@+id/mainButtonPlaySoloUna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:background="@drawable/bg_button"
+            android:drawableLeft="@drawable/ic_play_solo_una"
+            android:hint="Escuchar solo una"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"></Button>
 
-            <Button
-                android:id="@+id/mainButtonPlayElegidas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/menu_bg_button"
-                android:drawableLeft="@drawable/ic_play_elegidas"
-                android:hint="Escuchar elegidas"
-                android:textColorHint="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"></Button>
-        </LinearLayout>
+        <Button
+            android:id="@+id/mainButtonPlayElegidas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:background="@drawable/bg_button"
+            android:drawableLeft="@drawable/ic_play_elegidas"
+            android:hint="Escuchar selección"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"></Button>
 
+        <Button
+            android:id="@+id/mainButtonAyuda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40sp"
+            android:layout_marginRight="30sp"
+            android:layout_marginLeft="30sp"
+            android:background="@drawable/bg_button"
+            android:drawableLeft="@drawable/ic_ayuda"
+            android:hint="Ayuda"
+            android:textColorHint="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </ScrollView>
