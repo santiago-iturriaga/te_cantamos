@@ -17,6 +17,8 @@
             android:text="@string/ayuda_text"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_gravity="fill"
-            android:typeface="normal" />
+            android:justificationMode="inter_word"
+            android:typeface="normal"
+            android:padding="10dp"/>
     </ScrollView>
 </RelativeLayout>
