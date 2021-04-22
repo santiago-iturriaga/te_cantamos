@@ -2,100 +2,249 @@
 <resources>
     <integer name="canciones_cant">6</integer>
 
-    <string name="cancion0_titulo">titulo cancion 0</string>
-    <string name="cancion0_autor">los escarabajos</string>
-    <string name="cancion0_letra">Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\n
-        Integer ac felis gravida nulla fermentum suscipit vestibulum a massa.\n\n
-        Donec porta gravida nunc, ut lobortis lectus sagittis vel.\n\n
+    <string name="cancion0_titulo">Canción del jacaradá</string>
+    <string name="cancion0_autor">María Elena Walsh</string>
+    <string name="cancion0_letra">Al este y al oeste\n\n
+llueve y lloverá\n\n
+una flor y otra flor celeste\n\n
+del jacarandá.\n\n
+\n\n
+La vieja está en la cueva\n\n
+pero ya saldrá\n\n
+para ver qué bonito nieva\n\n
+del jacarandá.\n\n
+\n\n
+Se ríen las ardillas,\n\n
+ja jará jajá,\n\n
+porque el viento le hace cosquillas\n\n
+al jacarandá.\n\n
+\n\n
+El cielo en la vereda\n\n
+dibujado está\n\n
+con espuma y papel de seda\n\n
+del jacarandá.\n\n
+\n\n
+El viento como un brujo\n\n
+vino por acá:\n\n
+con su cola barrió el dibujo\n\n
+del jacarandá.\n\n
+\n\n
+Si pasa por la escuela,\n\n
+los chicos, quizá,\n\n
+se pondrán una escarapela\n\n
+del jacarandá.</string>
+
+
+    <string name="cancion1_titulo">Canción del jardinero</string>
+    <string name="cancion1_autor">María Elena Walsh</string>
+    <string name="cancion1_letra">Mírenme, soy feliz\n\n
+Entre las hojas que cantan\n\n
+Cuando atraviesa el jardín\n\n
+El viento en monopatín\n\n
+Cuando voy a dormir\n\n
+Cierro los ojos y sueño\n\n
+Con el olor de un país\n\n
+Florecido para mí\n\n
         \n\n
-        Suspendisse vel turpis et nunc pellentesque pulvinar.\n\n
-        Etiam magna ipsum, dictum at purus ac, iaculis tempor metus.\n\n
-        Integer pretium ac libero et vehicula.\n\n
-        Nam efficitur ex mauris, non finibus est scelerisque non.\n\n
+Yo no soy un bailarín\n\n
+Porque me gusta quedarme\n\n
+Quieto en la tierra y sentir\n\n
+Que mis pies tienen raíz\n\n
+Una vez estudié\n\n
+En un librito de yuyos\n\n
+Cosas que sólo yo sé\n\n
+Y que nunca olvidaré\n\n
         \n\n
-        Mauris maximus ligula felis, non aliquet sem aliquam non.\n\n
-        Praesent iaculis risus eget euismod volutpat.\n\n
-        Etiam mauris leo, dictum vel fermentum eu, consequat vehicula urna.\n\n
-        Donec a sapien sed lacus tristique ultricies at dapibus neque.\n\n
+Aprendí que una nuez\n\n
+Es arrugada y viejita\n\n
+Pero que puede ofrecer\n\n
+Mucha, mucha, mucha miel\n\n
+Del jardín soy duende fiel\n\n
+Cuando una flor está triste\n\n
+La pinto con un pincel\n\n
+Y le pongo un cascabel\n\n
         \n\n
-        Donec eleifend nunc sed interdum porttitor.\n\n
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\n\n
-        Integer eu vehicula urna, id iaculis lacus. </string>
+Soy guardián y doctor\n\n
+De una pandilla de flores\n\n
+Que juegan al dominó\n\n
+Y después les da la tos\n\n
+Por aquí anda dios\n\n
+Con regadera de lluvia\n\n
+O disfrazado de sol\n\n
+Asomando a su balcón\n\n
+Yo no soy un gran señor\n\n
+Pero en mi cielo de tierra\n\n
+Cuido el tesoro mejor:\n\n
+Mucho, mucho, mucho amor</string>
 
 
-    <string name="cancion1_titulo">titulo cancion 1</string>
-    <string name="cancion1_autor">jaime arroz</string>
-    <string name="cancion1_letra">Duis feugiat vehicula eleifend.\n\n
-        Maecenas gravida nisl eget nisl interdum sollicitudin.\n\n
-        In sit amet quam felis.\n\n
-        Aliquam semper libero et lacinia rutrum.\n\n
-        Donec at consectetur leo.\n\n
-        Vestibulum suscipit tortor nec facilisis vehicula.\n\n
-        Quisque efficitur auctor lobortis. </string>
-
-
-    <string name="cancion2_titulo">titulo cancion 2</string>
-    <string name="cancion2_autor">vi york</string>
-    <string name="cancion2_letra">Sed nec purus cursus, ultricies ex non, blandit mauris.\n\n
-        Nam condimentum, ante sit amet rutrum tempor, risus odio luctus leo, non luctus diam urna nec leo.\n\n
-        Donec nunc leo, sodales eget dolor a, porta feugiat metus.\n\n
-        Aliquam aliquet ante eget felis interdum, efficitur venenatis tortor aliquet.\n\n
+    <string name="cancion2_titulo">Chacarera de los gatos</string>
+    <string name="cancion2_autor">María Elena Walsh</string>
+    <string name="cancion2_letra">Tres morrongos elegantes\n\n
+De bastón, galera y guantes\n\n
+Dando muchas volteretas\n\n
+Prepararon sus maletas\n\n
         \n\n
-        Sed arcu libero, egestas et massa vel, eleifend fermentum metus.\n\n
-        Integer semper purus at mauris mollis condimentum a ac eros.\n\n
-        Sed sed maximus leo. </string>
-
-
-    <string name="cancion3_titulo">una cancion 3</string>
-    <string name="cancion3_autor">el rejilla</string>
-    <string name="cancion3_letra">Nulla facilisi.
-        Curabitur porttitor sem nec porta efficitur.\n\n
-        Duis aliquam dui orci, eu interdum leo placerat mattis.\n\n
-        Nunc nulla quam, consequat vel malesuada quis, volutpat id justo.\n\n
-        Suspendisse condimentum augue enim, ac posuere arcu sagittis vitae.\n\n
+Miau, miau, miau, miau\n\n
+Michi, michi, miau\n\n
         \n\n
-        Nunc facilisis tincidunt neque, interdum sodales ex aliquam vel.\n\n
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. </string>
+Toda la ratonería\n\n
+Preguntó con picardía\n\n
+¿Michifuces, dónde van?\n\n
+Nos vamos a Tucumán\n\n
+        \n\n
+Miau, miau, miau, miau\n\n
+Michi, michi, miau\n\n
+        \n\n
+Pues les han pasado el dato\n\n
+Que hay concursos para gato\n\n
+Los tres michis allá van\n\n
+En tranvía a Tucumán\n\n
+        \n\n
+Con cautela muy gatuna\n\n
+Cruzan la mate de Luna\n\n
+Y se tiran de cabeza\n\n
+Al concurso de belleza\n\n
+        \n\n
+Más como el concurso era\n\n
+Para gato y chacarera\n\n
+Los echaron del salón\n\n
+Sin ninguna explicación\n\n
+        \n\n
+Miau, miau, miau, miau\n\n
+Michi, michi, miau\n\n
+        \n\n
+Volvieron poco después\n\n
+Las galeras al revés\n\n
+Con abrojos en el pelo\n\n
+Y las colas por el suelo\n\n
+        \n\n
+Miau, miau, miau, miau\n\n
+Michi, michi, miau\n\n
+        \n\n
+Le maullaron la verdad\n\n
+A toda la vecindad\n\n
+¡Tucumán es feo y triste\n\n
+Porque el gato allá no existe!\n\n
+        \n\n
+Los ratones escucharon\n\n
+Y enseguida se marcharon\n\n
+Los ratones allá van\n\n
+En tranvía a Tucumán</string>
 
 
-    <string name="cancion4_titulo">titulo cancion 4</string>
-    <string name="cancion4_autor">las piedras rodantes</string>
-    <string name="cancion4_letra">Aenean eu consequat velit, at accumsan neque.\n\n
-        Maecenas fringilla aliquam quam, sit amet sollicitudin ex posuere ut.\n\n
-        Nam quis pretium orci, sed mollis neque.\n\n
-        Donec venenatis lectus justo, vitae feugiat massa faucibus id.\n\n
-        Etiam rhoncus mauris massa, quis dignissim neque laoreet viverra.\n\n
+    <string name="cancion3_titulo">Canción de tomar el té</string>
+    <string name="cancion3_autor">María Elena Walsh</string>
+    <string name="cancion3_letra">Estamos invitados\n\n
+a tomar el té.\n\n
+La tetera es de porcelana\n\n
+pero no se ve.\n\n
         \n\n
-        Donec pretium leo diam, id aliquet libero convallis accumsan.\n\n
-        Cras sodales in est ac viverra.\n\n
-        Cras ullamcorper diam ex, id condimentum purus pretium eu.\n\n
-        Ut nec massa volutpat, congue ligula et, mollis ligula.\n\n
-        Aliquam iaculis magna sit amet tellus sollicitudin rhoncus.\n\n
-        Nullam posuere eleifend leo, et blandit neque pharetra vitae.\n\n
+Yo no sé por qué.\n\n
         \n\n
-        In semper dolor eu velit mattis pulvinar vel non tellus.\n\n
-        Phasellus euismod neque id semper viverra.\n\n
-        Mauris a est non mi sagittis laoreet in vel erat. </string>
+La leche tiene frío\n\n
+y la abrigaré:\n\n
+le pondré un sobretodo mío,\n\n
+largo hasta los pies.\n\n
+        \n\n
+Cuidado cuando beban,\n\n
+se les va a caer\n\n
+la nariz dentro de la taza,\n\n
+y eso no está bien.\n\n
+        \n\n
+Detrás de una tostada\n\n
+se escondió la miel.\n\n
+La manteca, muy enojada,\n\n
+la retó en inglés.\n\n
+\n\n
+Mañana se lo llevan\n\n
+preso a un coronel\n\n
+por pinchar a la mermelada\n\n
+con un alfiler.\n\n
+        \n\n
+Parece que el azúcar\n\n
+siempre negra fue,\n\n
+y de un susto se puso blanca,\n\n
+tal como la ven.\n\n
+        \n\n
+Un plato timorato\n\n
+se casó anteayer.\n\n
+A su esposa la cafetera\n\n
+la trata de usted.\n\n
+        \n\n
+Los pobres coladores\n\n
+tienen mucha sed\n\n
+porque el agua se les escapa\n\n
+cada dos por tres.</string>
 
 
-    <string name="cancion5_titulo">titulo cancion 5</string>
-    <string name="cancion5_autor">los pancreas</string>
-    <string name="cancion5_letra">Nam euismod pharetra odio a pulvinar.\n\n
-        Praesent at egestas mauris.\n\n
-        Suspendisse commodo consectetur ex eu condimentum.\n\n
-        Donec fermentum tempor augue, id semper diam venenatis quis.\n\n
-        Vivamus condimentum justo sit amet eros pellentesque pellentesque.\n\n
-        Donec viverra laoreet nulla.\n\n
-        Donec cursus, nunc ac aliquam venenatis, lectus justo sodales enim, vitae blandit neque mauris et neque.\n\n
+    <string name="cancion4_titulo">Marcha de Osías</string>
+    <string name="cancion4_autor">María Elena Walsh</string>
+    <string name="cancion4_letra">Osías el osito en mameluco\n\n
+Paseaba por la calle Chacabuco\n\n
+Mirando las vidrieras de reojo\n\n
+Sin alcancía pero con antojo\n\n
         \n\n
-        Donec viverra augue a sodales placerat.\n\n
-        Nulla lobortis nunc sed lorem egestas, quis sollicitudin felis placerat.\n\n
-        Etiam pellentesque arcu a eros vulputate, a consectetur tortor rutrum.\n\n
-        Nullam facilisis sem vitae ligula aliquet, eget mattis diam rhoncus.\n\n
-        Nulla semper ipsum non nulla lacinia, et finibus mi finibus.\n\n
+Por fin se decidió y en un bazar\n\n
+Todo esto y mucho más quiso comprar\n\n
+Quiero tiempo pero tiempo no apurado\n\n
+Tiempo de jugar que es el mejor\n\n
+Por favor, me lo da suelto y no enjaulado\n\n
+Adentro de un despertador\n\n
         \n\n
-        Ut metus nulla, gravida ut efficitur vitae, venenatis et quam.\n\n
-        Nunc leo nisl, sollicitudin eu venenatis id, semper nec metus.\n\n
-        Aliquam vel fringilla dolor. </string>
+Quiero un río con catorce pescaditos\n\n
+Y un jardín sin guardia y sin ladrón\n\n
+También quiero para cuando este solito\n\n
+Un poco de conversación\n\n
+        \n\n
+Quiero cuentos, historietas y novelas\n\n
+Pero no las que andan a botón\n\n
+Yo las quiero de la mano de una abuela\n\n
+Que me las lea en camisón\n\n
+        \n\n
+Quiero todo lo que guardan los espejos\n\n
+Y una flor adentro de un raviol\n\n
+Y también una galera con conejos\n\n
+Y una pelota que haga gol\n\n
+        \n\n
+Quiero un cielo bien celeste\n\n
+Aunque me cueste\n\n
+De verdad no cielo de postal\n\n
+Para irme por el este el oeste\n\n
+En una capsula espacial</string>
+
+
+    <string name="cancion5_titulo">La reina batata</string>
+    <string name="cancion5_autor">María Elena Walsh</string>
+    <string name="cancion5_letra">Estaba la reina batata\n\n
+Sentada en un plato de plata,\n\n
+El cocinero la miró\n\n
+Y la reina se abatató\n\n
+        \n\n
+La reina temblaba de miedo,\n\n
+El cocinero con el dedo,\n\n
+Que no que sí, que sí que no\n\n
+De malhumor la amenazó\n\n
+        \n\n
+Pensaba la reina batata:\n\n
+"Ahora me pincha y me mata"\n\n
+Y el cocinero murmuró:\n\n
+"Con ésta sí me quedo yo"\n\n
+        \n\n
+La reina vio por el rabillo\n\n
+Que estaba afilando el cuchillo\n\n
+Y tanto tanto se asustó\n\n
+Que rodó al suelo y se escondió\n\n
+        \n\n
+Entonces llegó de la plaza\n\n
+La nena menor de la casa,\n\n
+Cuando buscaba su yoyó\n\n
+En un rincón la descubrió\n\n
+        \n\n
+La nena en un trono de lata\n\n
+La puso a la reina batata\n\n
+Colita verde le brotó\n\n
+(A la reina batata, a la nena, no)\n\n
+Y esta canción se terminó</string>
 
 </resources>
