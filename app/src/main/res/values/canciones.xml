@@ -272,16 +272,16 @@ Colita verde le brotó
 Y esta canción se terminó"</string>
 
     <string name="cancion10_titulo">A la rueda rueda</string>
-    <string name="cancion10_autor">...</string>
-    <string name="cancion10_interprete">...</string>
+    <string name="cancion10_autor"></string>
+    <string name="cancion10_interprete"></string>
     <string name="cancion10_letra">"A la rueda rueda de pan y canela
 Dame un vintén que me voy a la escuela
 Vino la maestra me dio un coscorrón
 ¡Que viva la pipa del vino Carlón!"</string>
 
     <string name="cancion11_titulo">Arrorró mi niño</string>
-    <string name="cancion11_autor">...</string>
-    <string name="cancion11_interprete">...</string>
+    <string name="cancion11_autor"></string>
+    <string name="cancion11_interprete"></string>
     <string name="cancion11_letra">"Arrorró, mi niño
 Arrorró, mi Sol
 Arrorró pedazo
@@ -308,8 +308,8 @@ Arrorró pedazo
 de mi corazón"</string>
 
     <string name="cancion12_titulo">Arroz con leche</string>
-    <string name="cancion12_autor">...</string>
-    <string name="cancion12_interprete">...</string>
+    <string name="cancion12_autor"></string>
+    <string name="cancion12_interprete"></string>
     <string name="cancion12_letra">"Arroz con leche
 yo quiero jugar
 con unos amiguitos
@@ -327,7 +327,7 @@ disfruto yo."</string>
 
     <string name="cancion13_titulo">Canción para bañar la luna</string>
     <string name="cancion13_autor">María Elena Walsh</string>
-    <string name="cancion13_interprete">...</string>
+    <string name="cancion13_interprete"></string>
     <string name="cancion13_letra">"Ya la luna baja en camisón,
 a bañarse en un charquito con jabón.
 
@@ -338,16 +338,16 @@ Quien la pesque con una cañita de bambú,
 se la lleva a Siu Kiu."</string>
 
     <string name="cancion14_titulo">Caracol col col</string>
-    <string name="cancion14_autor">...</string>
-    <string name="cancion14_interprete">...</string>
+    <string name="cancion14_autor"></string>
+    <string name="cancion14_interprete"></string>
     <string name="cancion14_letra">"Caracol, col, col
 Saca tus cuernos al sol
 Que tu padre y tu madre
 ya los sacaron."</string>
 
     <string name="cancion15_titulo">Cucú, cucú, cantaba la rana</string>
-    <string name="cancion15_autor">...</string>
-    <string name="cancion15_interprete">...</string>
+    <string name="cancion15_autor"></string>
+    <string name="cancion15_interprete"></string>
     <string name="cancion15_letra">"Cucú, cucú, cantaba la rana.
 Cucú, cucú, debajo del agua.
 
@@ -367,8 +367,8 @@ Cucú, cucú, se puso muy triste
 Cucú, cucú y se echó a llorar."</string>
 
     <string name="cancion16_titulo">¿Estrellita dónde estás?</string>
-    <string name="cancion16_autor">...</string>
-    <string name="cancion16_interprete">...</string>
+    <string name="cancion16_autor"></string>
+    <string name="cancion16_interprete"></string>
     <string name="cancion16_letra">"Estrellita dónde estás?
 me pregunto qué serás,
 en el cielo y en el mar
@@ -386,8 +386,8 @@ Estrellita, dónde estás?
 me pregunto qué serás."</string>
 
     <string name="cancion17_titulo">Fray Santiago</string>
-    <string name="cancion17_autor">...</string>
-    <string name="cancion17_interprete">...</string>
+    <string name="cancion17_autor"></string>
+    <string name="cancion17_interprete"></string>
     <string name="cancion17_letra">"Fray Santiago, Fray Santiago,
 ¿duerme usted? ¿duerme usted?
 Suenan las campanas, suenan las campanas
@@ -395,8 +395,8 @@ din, don, dan,
 din, don, dan."</string>
 
     <string name="cancion18_titulo">Que llueva, que llueva</string>
-    <string name="cancion18_autor">...</string>
-    <string name="cancion18_interprete">...</string>
+    <string name="cancion18_autor"></string>
+    <string name="cancion18_interprete"></string>
     <string name="cancion18_letra">"Que llueva, que llueva
 la vieja esta en la cueva,
 los pajaritos cantan,
@@ -407,8 +407,8 @@ arriba del colchón,
 con agua y jabón."</string>
 
     <string name="cancion19_titulo">Saco una manito</string>
-    <string name="cancion19_autor">...</string>
-    <string name="cancion19_interprete">...</string>
+    <string name="cancion19_autor"></string>
+    <string name="cancion19_interprete"></string>
     <string name="cancion19_letra">"Saco una manita la hago bailar,
 la cierro, la abro y la vuelvo a guardar.
 Saco otra manita la hago bailar,

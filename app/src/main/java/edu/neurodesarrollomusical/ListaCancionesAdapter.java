@@ -45,9 +45,20 @@ public class ListaCancionesAdapter extends ArrayAdapter<CancionesController.Canc
         textView = (TextView) rowView.findViewById(R.id.listaCancionesRowTitulo);
         textView.setText(canciones[position].titulo);
         textView = (TextView) rowView.findViewById(R.id.listaCancionesRowAutor);
-        textView.setText(canciones[position].autor);
+        if (canciones[position].autor.trim().length() > 0) {
+            textView.setVisibility(View.VISIBLE);
+            textView.setText(canciones[position].autor);
+        } else {
+            textView.setVisibility(View.INVISIBLE);
+        }
         textView = (TextView) rowView.findViewById(R.id.listaCancionesRowInterprete);
         textView.setText(canciones[position].interprete);
+        if (canciones[position].interprete.trim().length() > 0 && !canciones[position].interprete.trim().equals(canciones[position].autor)) {
+            textView.setVisibility(View.VISIBLE);
+            textView.setText(canciones[position].interprete);
+        } else {
+            textView.setVisibility(View.INVISIBLE);
+        }
 
         ImageView imageViewFav = (ImageView) rowView.findViewById(R.id.listaCancionesRowFavorita);
         ImageView imageViewSel = (ImageView) rowView.findViewById(R.id.listaCancionesRowSeleccionado);

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -96,6 +97,30 @@ public class PlayerActivity extends AppCompatActivity {
             case INTERVENCION:
                 canciones = extras.getIntArray(EXTRA_CANCIONES);
                 cancion_actual = 0;
+                updateProgreso();
+
+                final Handler handler = new Handler();
+                final int delay = 1000;
+
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            if (player != null) {
+                                if (player.isPlaying()) {
+                                    int duracion = player.getDuration();
+                                    int posicion = player.getCurrentPosition();
+                                    if (duracion > posicion) {
+                                        textViewTiempo.setText(displayTime(duracion - posicion));
+                                    }
+                                }
+                            }
+                        } catch (IllegalStateException e) {
+                            // Nada
+                        }
+                        handler.postDelayed(this, delay);
+                    }
+                }, delay);
 
                 buttonPlayPause.setVisibility(View.VISIBLE);
                 buttonNext.setVisibility(View.VISIBLE);
@@ -111,8 +136,18 @@ public class PlayerActivity extends AppCompatActivity {
                 CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancionId(canciones[cancion_actual]);
                 if (c != null) {
                     textViewTitulo.setText(c.titulo);
-                    textViewAutor.setText(c.autor);
-                    textViewInterprete.setText(c.interprete);
+                    if (c.autor.trim().length() > 0) {
+                        textViewAutor.setVisibility(View.VISIBLE);
+                        textViewAutor.setText(c.autor);
+                    } else {
+                        textViewAutor.setVisibility(View.INVISIBLE);
+                    }
+                    if (c.interprete.trim().length() > 0 && !c.interprete.trim().equals(c.autor.trim())) {
+                        textViewInterprete.setVisibility(View.VISIBLE);
+                        textViewInterprete.setText(c.interprete);
+                    } else {
+                        textViewInterprete.setVisibility(View.INVISIBLE);
+                    }
                     textViewLetra.setText(c.letra);
                     setFavorito(imageViewFav, c.es_favorita);
                 }
@@ -125,6 +160,36 @@ public class PlayerActivity extends AppCompatActivity {
                 stop();
                 break;
         }
+    }
+
+    private Boolean setImagenProgreso(ImageView p, int pos) {
+        if (canciones.length > pos && canciones.length > 1) {
+            p.setVisibility(View.VISIBLE);
+            if (cancion_actual > pos) {
+                p.setImageResource(R.drawable.ic_play_progreso_listo);
+            } else {
+                p.setImageResource(R.drawable.ic_play_progreso);
+            }
+            return true;
+        }
+        else {
+            p.setVisibility(View.INVISIBLE);
+            return false;
+        }
+    }
+
+    private void updateProgreso() {
+        ImageView p1 = findViewById(R.id.playerLayoutProgreso1);
+        ImageView p2 = findViewById(R.id.playerLayoutProgreso2);
+        ImageView p3 = findViewById(R.id.playerLayoutProgreso3);
+        ImageView p4 = findViewById(R.id.playerLayoutProgreso4);
+        ImageView p5 = findViewById(R.id.playerLayoutProgreso5);
+
+        setImagenProgreso(p1,0);
+        setImagenProgreso(p2,1);
+        setImagenProgreso(p3,2);
+        setImagenProgreso(p4,3);
+        setImagenProgreso(p5,4);
     }
 
     public void setFavorito(ImageView fav, boolean estado) {
@@ -163,23 +228,57 @@ public class PlayerActivity extends AppCompatActivity {
 
     protected void start() {
         stop();
+        updateProgreso();
 
         if (canciones != null && modo == MODO.INTERVENCION) {
             if (canciones.length > 0 && cancion_actual < canciones.length) {
                 CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancionId(canciones[cancion_actual]);
                 if (c != null) {
                     textViewTitulo.setText(c.titulo);
-                    textViewAutor.setText(c.autor);
-                    textViewInterprete.setText(c.interprete);
+                    if (c.autor.trim().length() > 0) {
+                        textViewAutor.setVisibility(View.VISIBLE);
+                        textViewAutor.setText(c.autor);
+                    } else {
+                        textViewAutor.setVisibility(View.INVISIBLE);
+                    }
+                    if (c.interprete.trim().length() > 0 && !c.interprete.trim().equals(c.autor.trim())) {
+                        textViewInterprete.setVisibility(View.VISIBLE);
+                        textViewInterprete.setText(c.interprete);
+                    } else {
+                        textViewInterprete.setVisibility(View.INVISIBLE);
+                    }
                     textViewLetra.setText(c.letra);
                     setFavorito(imageViewFav, c.es_favorita);
 
                     player = MediaPlayer.create(PlayerActivity.this, c.resourceId);
-                    player.start();
+                    player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mp) {
+                            buttonNext.performClick();
+                        }
+                    });
                     buttonPlayPause.setBackgroundResource(R.drawable.ic_pause_control);
+                    textViewTiempo.setText(displayTime(player.getDuration()));
+
+                    player.start();
                 }
             }
         }
+    }
+
+    public String displayTime(int duracion) {
+        String time = "";
+
+        int min = duracion / 1000 / 60;
+        int secs = duracion / 1000 % 60;
+
+        time = min + ":";
+        if (secs < 10) {
+            time += "0";
+        }
+        time += secs;
+
+        return time;
     }
 
     protected void stop() {
@@ -192,6 +291,7 @@ public class PlayerActivity extends AppCompatActivity {
 
     protected void play() {
         if (player != null) if (!player.isPlaying()) {
+            textViewTiempo.setText(displayTime(player.getDuration()-player.getCurrentPosition()));
             player.start();
             buttonPlayPause.setBackgroundResource(R.drawable.ic_pause_control);
         }
