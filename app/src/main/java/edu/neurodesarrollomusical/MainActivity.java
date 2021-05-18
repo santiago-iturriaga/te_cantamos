@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class MainActivity extends AppCompatActivity {
     static final public String EXTRA_CANCIONES = "CANCIONES";
 
@@ -31,11 +35,72 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button buttonPlayFavoritos = findViewById(R.id.mainButtonPlayFavoritos);
+        buttonPlayFavoritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int max = v.getContext().getResources().getInteger(R.integer.intervencion_max_canciones);
+                CancionesController.Cancion fav[] = CancionesController.getInstance(v.getContext()).listarCancionesFavoritas();
+                if (max > fav.length) max = fav.length;
+
+                if (max > 0) {
+                    CancionesController.Cancion aux;
+                    Random rnd = new Random();
+                    for (int i = 0; i < max; i++) {
+                        int pos = Math.abs(rnd.nextInt()) % (fav.length - i);
+                        int last = fav.length - i - 1;
+
+                        if (pos != last) {
+                            aux = fav[last];
+                            fav[last] = fav[pos];
+                            fav[pos] = aux;
+                        }
+                    }
+
+                    int canciones[] = new int[max];
+                    int j = 0;
+                    for (int i = fav.length - max; i < fav.length; i++) {
+                        canciones[j] = fav[i].id;
+                        j++;
+                    }
+
+                    Intent i = new Intent(MainActivity.this, PlayerActivity.class);
+                    i.putExtra(PlayerActivity.EXTRA_MODO, PlayerActivity.MODO.INTERVENCION.ordinal());
+                    i.putExtra(PlayerActivity.EXTRA_CANCIONES, canciones);
+                    startActivityForResult(i, MODO.SIN_ACCION.ordinal());
+                } else {
+                    MensajesHelper.showText(v.getContext(),"No hay canciones favoritas seleccionadas");
+                }
+            }
+        });
+
         Button buttonPlayAleatorio = findViewById(R.id.mainButtonPlayAleatorio);
         buttonPlayAleatorio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int canciones[] = {0,1,2,3,4,5};
+                int max = v.getContext().getResources().getInteger(R.integer.intervencion_max_canciones);
+                CancionesController.Cancion todas[] = CancionesController.getInstance(v.getContext()).listarCanciones();
+                if (max > todas.length) max = todas.length;
+                CancionesController.Cancion aux;
+                Random rnd = new Random();
+                for (int i = 0; i < max; i++) {
+                    int pos = Math.abs(rnd.nextInt()) % (todas.length - i);
+                    int last = todas.length-i-1;
+
+                    if (pos != last) {
+                        aux = todas[last];
+                        todas[last] = todas[pos];
+                        todas[pos] = aux;
+                    }
+                }
+
+                int canciones[] = new int[max];
+                int j = 0;
+                for (int i=todas.length-max; i<todas.length; i++) {
+                    canciones[j] = todas[i].id;
+                    j++;
+                }
+
                 Intent i = new Intent(MainActivity.this, PlayerActivity.class);
                 i.putExtra(PlayerActivity.EXTRA_MODO, PlayerActivity.MODO.INTERVENCION.ordinal());
                 i.putExtra(PlayerActivity.EXTRA_CANCIONES, canciones);
@@ -76,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        
+
         if (resultCode == RESULT_OK) {
             switch (MODO.values()[requestCode]) {
                 case SIN_ACCION:

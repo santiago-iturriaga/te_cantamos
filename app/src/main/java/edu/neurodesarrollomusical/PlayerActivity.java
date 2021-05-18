@@ -52,8 +52,13 @@ public class PlayerActivity extends AppCompatActivity {
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (cancion_actual < canciones.length - 1) cancion_actual++;
-                start();
+                if (cancion_actual < canciones.length - 1) {
+                    cancion_actual++;
+                    start();
+                } else {
+                    //stop();
+                    finish();
+                }
             }
         });
 
@@ -61,7 +66,9 @@ public class PlayerActivity extends AppCompatActivity {
         buttonPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (cancion_actual > 0) cancion_actual--;
+                if (cancion_actual > 0) {
+                    cancion_actual--;
+                }
                 start();
             }
         });

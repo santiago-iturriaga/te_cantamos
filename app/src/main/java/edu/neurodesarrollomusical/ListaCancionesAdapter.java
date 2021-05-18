@@ -72,8 +72,7 @@ public class ListaCancionesAdapter extends ArrayAdapter<CancionesController.Canc
                 @Override
                 public void onClick(View v) {
                     CancionesController.Cancion c = (CancionesController.Cancion)v.getTag();
-                    View click_row = ((ListView)v.getParent()).getChildAt(c.id);
-                    ImageView click_sel = (ImageView) click_row.findViewById(R.id.listaCancionesRowSeleccionado);
+                    ImageView click_sel = (ImageView) v.findViewById(R.id.listaCancionesRowSeleccionado);
 
                     if (seleccionadas.contains(position)) {
                         setSeleccionado(click_sel,false);

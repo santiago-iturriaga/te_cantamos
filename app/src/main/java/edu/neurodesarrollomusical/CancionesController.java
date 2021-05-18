@@ -73,6 +73,17 @@ public class CancionesController {
         return _canciones.toArray(lista);
     }
 
+    public Cancion[] listarCancionesFavoritas() {
+        ArrayList<Cancion> lista = new ArrayList<Cancion>();
+        for (int i=0; i<_canciones.size(); i++) {
+            if (_canciones.get(i).es_favorita) {
+                lista.add(_canciones.get(i));
+            }
+        }
+        Cancion listaArray[] = new Cancion[lista.size()];
+        return lista.toArray(listaArray);
+    }
+
     public Cancion obtenerCancionId(int id) {
         for (int i = 0; i < NUMERO_CANCIONES; i++) {
             if (_canciones.get(i).id == id) return _canciones.get(i);
