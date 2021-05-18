@@ -48,7 +48,7 @@ public class ListaCancionesActivity extends ListActivity {
                 Intent data = new Intent();
                 ListaCancionesActivity listaCanciones = (ListaCancionesActivity) v.getContext();
                 ListAdapter adapter = listaCanciones.getListAdapter();
-                data.putExtra(MainActivity.EXTRA_CANCIONES, ((ListaCancionesAdapter)adapter).getSeleccionadas());
+                data.putExtra(MainActivity.EXTRA_CANCIONES, ((ListaCancionesAdapter)adapter).getSeleccionadasId());
                 setResult(RESULT_OK,data);
                 finish();
             }
@@ -96,7 +96,7 @@ public class ListaCancionesActivity extends ListActivity {
     public void onListItemClick(ListView l, View v, int position, long id) {
         switch (modo) {
             case ELEGIR_UNA_CANCION_PARA_INTERVENCION:
-                int[] elegida = {position};
+                int[] elegida = {canciones[position].id};
                 Intent data = new Intent();
                 data.putExtra(MainActivity.EXTRA_CANCIONES, elegida);
                 setResult(RESULT_OK,data);
@@ -106,7 +106,7 @@ public class ListaCancionesActivity extends ListActivity {
 
                 break;
             case LISTAR_CANCIONES:
-                int[] elegidas = {position};
+                int[] elegidas = {canciones[position].id};
                 Intent i = new Intent(ListaCancionesActivity.this, PlayerActivity.class);
                 i.putExtra(PlayerActivity.EXTRA_MODO, PlayerActivity.MODO.SOLO_LETRA.ordinal());
                 i.putExtra(PlayerActivity.EXTRA_CANCIONES, elegidas);

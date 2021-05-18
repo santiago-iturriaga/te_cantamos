@@ -46,6 +46,8 @@ public class ListaCancionesAdapter extends ArrayAdapter<CancionesController.Canc
         textView.setText(canciones[position].titulo);
         textView = (TextView) rowView.findViewById(R.id.listaCancionesRowAutor);
         textView.setText(canciones[position].autor);
+        textView = (TextView) rowView.findViewById(R.id.listaCancionesRowInterprete);
+        textView.setText(canciones[position].interprete);
 
         ImageView imageViewFav = (ImageView) rowView.findViewById(R.id.listaCancionesRowFavorita);
         ImageView imageViewSel = (ImageView) rowView.findViewById(R.id.listaCancionesRowSeleccionado);
@@ -84,11 +86,11 @@ public class ListaCancionesAdapter extends ArrayAdapter<CancionesController.Canc
         return rowView;
     }
 
-    public int[] getSeleccionadas() {
+    public int[] getSeleccionadasId() {
         int[] elegidas = new int[seleccionadas.size()];
         for (int i=0; i < seleccionadas.size(); i++)
         {
-            elegidas[i] = seleccionadas.get(i).intValue();
+            elegidas[i] = canciones[seleccionadas.get(i).intValue()].id;
         }
         return elegidas;
     }
@@ -98,11 +100,12 @@ public class ListaCancionesAdapter extends ArrayAdapter<CancionesController.Canc
             fav.setVisibility(View.VISIBLE);
             fav.setImageResource(R.drawable.ic_cancion_favorita);
         } else {
-            //fav.setImageResource(R.drawable.ic_cancion_no_favorita);
+            fav.setImageResource(R.drawable.ic_cancion_no_favorita);
             fav.setVisibility(View.INVISIBLE);
         }
     }
 
+    /*
     public void toggleSeleccionado(ImageView sel) {
         if (sel.getVisibility() == View.INVISIBLE) {
             sel.setVisibility(View.VISIBLE);
@@ -110,12 +113,13 @@ public class ListaCancionesAdapter extends ArrayAdapter<CancionesController.Canc
             sel.setVisibility(View.INVISIBLE);
         }
     }
+     */
 
     public void setSeleccionado(ImageView sel, boolean estado) {
         if (estado) {
-            sel.setVisibility(View.VISIBLE);
+            sel.setImageResource(R.drawable.ic_lista_canciones_sel);
         } else {
-            sel.setVisibility(View.INVISIBLE);
+            sel.setImageResource(R.drawable.ic_lista_canciones_unsel);
         }
     }
 }

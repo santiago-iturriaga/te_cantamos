@@ -1,250 +1,419 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="canciones_cant">6</integer>
+    <integer-array name="canciones">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+    </integer-array>
 
     <string name="cancion0_titulo">Canción del jacaradá</string>
     <string name="cancion0_autor">María Elena Walsh</string>
-    <string name="cancion0_letra">Al este y al oeste\n\n
-llueve y lloverá\n\n
-una flor y otra flor celeste\n\n
-del jacarandá.\n\n
-\n\n
-La vieja está en la cueva\n\n
-pero ya saldrá\n\n
-para ver qué bonito nieva\n\n
-del jacarandá.\n\n
-\n\n
-Se ríen las ardillas,\n\n
-ja jará jajá,\n\n
-porque el viento le hace cosquillas\n\n
-al jacarandá.\n\n
-\n\n
-El cielo en la vereda\n\n
-dibujado está\n\n
-con espuma y papel de seda\n\n
-del jacarandá.\n\n
-\n\n
-El viento como un brujo\n\n
-vino por acá:\n\n
-con su cola barrió el dibujo\n\n
-del jacarandá.\n\n
-\n\n
-Si pasa por la escuela,\n\n
-los chicos, quizá,\n\n
-se pondrán una escarapela\n\n
-del jacarandá.</string>
+    <string name="cancion0_interprete">María Elena Walsh</string>
+    <string name="cancion0_letra">"Al este y al oeste
+llueve y lloverá
+una flor y otra flor celeste
+del jacarandá.
+
+La vieja está en la cueva
+pero ya saldrá
+para ver qué bonito nieva
+del jacarandá.
+
+Se ríen las ardillas,
+ja jará jajá,
+porque el viento le hace cosquillas
+al jacarandá.
+
+El cielo en la vereda
+dibujado está
+con espuma y papel de seda
+del jacarandá.
+
+El viento como un brujo
+vino por acá:
+con su cola barrió el dibujo
+del jacarandá.
+
+Si pasa por la escuela,
+los chicos, quizá,
+se pondrán una escarapela
+del jacarandá."</string>
 
 
     <string name="cancion1_titulo">Canción del jardinero</string>
     <string name="cancion1_autor">María Elena Walsh</string>
-    <string name="cancion1_letra">Mírenme, soy feliz\n\n
-Entre las hojas que cantan\n\n
-Cuando atraviesa el jardín\n\n
-El viento en monopatín\n\n
-Cuando voy a dormir\n\n
-Cierro los ojos y sueño\n\n
-Con el olor de un país\n\n
-Florecido para mí\n\n
-        \n\n
-Yo no soy un bailarín\n\n
-Porque me gusta quedarme\n\n
-Quieto en la tierra y sentir\n\n
-Que mis pies tienen raíz\n\n
-Una vez estudié\n\n
-En un librito de yuyos\n\n
-Cosas que sólo yo sé\n\n
-Y que nunca olvidaré\n\n
-        \n\n
-Aprendí que una nuez\n\n
-Es arrugada y viejita\n\n
-Pero que puede ofrecer\n\n
-Mucha, mucha, mucha miel\n\n
-Del jardín soy duende fiel\n\n
-Cuando una flor está triste\n\n
-La pinto con un pincel\n\n
-Y le pongo un cascabel\n\n
-        \n\n
-Soy guardián y doctor\n\n
-De una pandilla de flores\n\n
-Que juegan al dominó\n\n
-Y después les da la tos\n\n
-Por aquí anda dios\n\n
-Con regadera de lluvia\n\n
-O disfrazado de sol\n\n
-Asomando a su balcón\n\n
-Yo no soy un gran señor\n\n
-Pero en mi cielo de tierra\n\n
-Cuido el tesoro mejor:\n\n
-Mucho, mucho, mucho amor</string>
+    <string name="cancion1_interprete">María Elena Walsh</string>
+    <string name="cancion1_letra">"Mírenme, soy feliz
+Entre las hojas que cantan
+Cuando atraviesa el jardín
+El viento en monopatín
+Cuando voy a dormir
+Cierro los ojos y sueño
+Con el olor de un país
+Florecido para mí
+
+Yo no soy un bailarín
+Porque me gusta quedarme
+Quieto en la tierra y sentir
+Que mis pies tienen raíz
+Una vez estudié
+En un librito de yuyos
+Cosas que sólo yo sé
+Y que nunca olvidaré
+
+Aprendí que una nuez
+Es arrugada y viejita
+Pero que puede ofrecer
+Mucha, mucha, mucha miel
+Del jardín soy duende fiel
+Cuando una flor está triste
+La pinto con un pincel
+Y le pongo un cascabel
+
+Soy guardián y doctor
+De una pandilla de flores
+Que juegan al dominó
+Y después les da la tos
+Por aquí anda dios
+Con regadera de lluvia
+O disfrazado de sol
+Asomando a su balcón
+Yo no soy un gran señor
+Pero en mi cielo de tierra
+Cuido el tesoro mejor:
+Mucho, mucho, mucho amor"</string>
 
 
     <string name="cancion2_titulo">Chacarera de los gatos</string>
     <string name="cancion2_autor">María Elena Walsh</string>
-    <string name="cancion2_letra">Tres morrongos elegantes\n\n
-De bastón, galera y guantes\n\n
-Dando muchas volteretas\n\n
-Prepararon sus maletas\n\n
-        \n\n
-Miau, miau, miau, miau\n\n
-Michi, michi, miau\n\n
-        \n\n
-Toda la ratonería\n\n
-Preguntó con picardía\n\n
-¿Michifuces, dónde van?\n\n
-Nos vamos a Tucumán\n\n
-        \n\n
-Miau, miau, miau, miau\n\n
-Michi, michi, miau\n\n
-        \n\n
-Pues les han pasado el dato\n\n
-Que hay concursos para gato\n\n
-Los tres michis allá van\n\n
-En tranvía a Tucumán\n\n
-        \n\n
-Con cautela muy gatuna\n\n
-Cruzan la mate de Luna\n\n
-Y se tiran de cabeza\n\n
-Al concurso de belleza\n\n
-        \n\n
-Más como el concurso era\n\n
-Para gato y chacarera\n\n
-Los echaron del salón\n\n
-Sin ninguna explicación\n\n
-        \n\n
-Miau, miau, miau, miau\n\n
-Michi, michi, miau\n\n
-        \n\n
-Volvieron poco después\n\n
-Las galeras al revés\n\n
-Con abrojos en el pelo\n\n
-Y las colas por el suelo\n\n
-        \n\n
-Miau, miau, miau, miau\n\n
-Michi, michi, miau\n\n
-        \n\n
-Le maullaron la verdad\n\n
-A toda la vecindad\n\n
-¡Tucumán es feo y triste\n\n
-Porque el gato allá no existe!\n\n
-        \n\n
-Los ratones escucharon\n\n
-Y enseguida se marcharon\n\n
-Los ratones allá van\n\n
-En tranvía a Tucumán</string>
+    <string name="cancion2_interprete">María Elena Walsh</string>
+    <string name="cancion2_letra">"Tres morrongos elegantes
+De bastón, galera y guantes
+Dando muchas volteretas
+Prepararon sus maletas
+
+Miau, miau, miau, miau
+Michi, michi, miau
+
+Toda la ratonería
+Preguntó con picardía
+¿Michifuces, dónde van?
+Nos vamos a Tucumán
+
+Miau, miau, miau, miau
+Michi, michi, miau
+
+Pues les han pasado el dato
+Que hay concursos para gato
+Los tres michis allá van
+En tranvía a Tucumán
+
+Con cautela muy gatuna
+Cruzan la mate de Luna
+Y se tiran de cabeza
+Al concurso de belleza
+
+Más como el concurso era
+Para gato y chacarera
+Los echaron del salón
+Sin ninguna explicación
+
+Miau, miau, miau, miau
+Michi, michi, miau
+
+Volvieron poco después
+Las galeras al revés
+Con abrojos en el pelo
+Y las colas por el suelo
+
+Miau, miau, miau, miau
+Michi, michi, miau
+
+Le maullaron la verdad
+A toda la vecindad
+¡Tucumán es feo y triste
+Porque el gato allá no existe!
+
+Los ratones escucharon
+Y enseguida se marcharon
+Los ratones allá van
+En tranvía a Tucumán"</string>
 
 
     <string name="cancion3_titulo">Canción de tomar el té</string>
     <string name="cancion3_autor">María Elena Walsh</string>
-    <string name="cancion3_letra">Estamos invitados\n\n
-a tomar el té.\n\n
-La tetera es de porcelana\n\n
-pero no se ve.\n\n
-        \n\n
-Yo no sé por qué.\n\n
-        \n\n
-La leche tiene frío\n\n
-y la abrigaré:\n\n
-le pondré un sobretodo mío,\n\n
-largo hasta los pies.\n\n
-        \n\n
-Cuidado cuando beban,\n\n
-se les va a caer\n\n
-la nariz dentro de la taza,\n\n
-y eso no está bien.\n\n
-        \n\n
-Detrás de una tostada\n\n
-se escondió la miel.\n\n
-La manteca, muy enojada,\n\n
-la retó en inglés.\n\n
-\n\n
-Mañana se lo llevan\n\n
-preso a un coronel\n\n
-por pinchar a la mermelada\n\n
-con un alfiler.\n\n
-        \n\n
-Parece que el azúcar\n\n
-siempre negra fue,\n\n
-y de un susto se puso blanca,\n\n
-tal como la ven.\n\n
-        \n\n
-Un plato timorato\n\n
-se casó anteayer.\n\n
-A su esposa la cafetera\n\n
-la trata de usted.\n\n
-        \n\n
-Los pobres coladores\n\n
-tienen mucha sed\n\n
-porque el agua se les escapa\n\n
-cada dos por tres.</string>
+    <string name="cancion3_interprete">María Elena Walsh</string>
+    <string name="cancion3_letra">"Estamos invitados
+a tomar el té.
+La tetera es de porcelana
+pero no se ve.
+
+Yo no sé por qué.
+
+La leche tiene frío
+y la abrigaré:
+le pondré un sobretodo mío,
+largo hasta los pies.
+
+Cuidado cuando beban,
+se les va a caer
+la nariz dentro de la taza,
+y eso no está bien.
+
+Detrás de una tostada
+se escondió la miel.
+La manteca, muy enojada,
+la retó en inglés.
+
+Mañana se lo llevan
+preso a un coronel
+por pinchar a la mermelada
+con un alfiler.
+        
+Parece que el azúcar
+siempre negra fue,
+y de un susto se puso blanca,
+tal como la ven.
+        
+Un plato timorato
+se casó anteayer.
+A su esposa la cafetera
+la trata de usted.
+        
+Los pobres coladores
+tienen mucha sed
+porque el agua se les escapa
+cada dos por tres."</string>
 
 
     <string name="cancion4_titulo">Marcha de Osías</string>
     <string name="cancion4_autor">María Elena Walsh</string>
-    <string name="cancion4_letra">Osías el osito en mameluco\n\n
-Paseaba por la calle Chacabuco\n\n
-Mirando las vidrieras de reojo\n\n
-Sin alcancía pero con antojo\n\n
-        \n\n
-Por fin se decidió y en un bazar\n\n
-Todo esto y mucho más quiso comprar\n\n
-Quiero tiempo pero tiempo no apurado\n\n
-Tiempo de jugar que es el mejor\n\n
-Por favor, me lo da suelto y no enjaulado\n\n
-Adentro de un despertador\n\n
-        \n\n
-Quiero un río con catorce pescaditos\n\n
-Y un jardín sin guardia y sin ladrón\n\n
-También quiero para cuando este solito\n\n
-Un poco de conversación\n\n
-        \n\n
-Quiero cuentos, historietas y novelas\n\n
-Pero no las que andan a botón\n\n
-Yo las quiero de la mano de una abuela\n\n
-Que me las lea en camisón\n\n
-        \n\n
-Quiero todo lo que guardan los espejos\n\n
-Y una flor adentro de un raviol\n\n
-Y también una galera con conejos\n\n
-Y una pelota que haga gol\n\n
-        \n\n
-Quiero un cielo bien celeste\n\n
-Aunque me cueste\n\n
-De verdad no cielo de postal\n\n
-Para irme por el este el oeste\n\n
-En una capsula espacial</string>
+    <string name="cancion4_interprete">María Elena Walsh</string>
+    <string name="cancion4_letra">"Osías el osito en mameluco
+Paseaba por la calle Chacabuco
+Mirando las vidrieras de reojo
+Sin alcancía pero con antojo
+        
+Por fin se decidió y en un bazar
+Todo esto y mucho más quiso comprar
+Quiero tiempo pero tiempo no apurado
+Tiempo de jugar que es el mejor
+Por favor, me lo da suelto y no enjaulado
+Adentro de un despertador
+        
+Quiero un río con catorce pescaditos
+Y un jardín sin guardia y sin ladrón
+También quiero para cuando este solito
+Un poco de conversación
+        
+Quiero cuentos, historietas y novelas
+Pero no las que andan a botón
+Yo las quiero de la mano de una abuela
+Que me las lea en camisón
+        
+Quiero todo lo que guardan los espejos
+Y una flor adentro de un raviol
+Y también una galera con conejos
+Y una pelota que haga gol
+        
+Quiero un cielo bien celeste
+Aunque me cueste
+De verdad no cielo de postal
+Para irme por el este el oeste
+En una capsula espacial"</string>
 
 
     <string name="cancion5_titulo">La reina batata</string>
     <string name="cancion5_autor">María Elena Walsh</string>
-    <string name="cancion5_letra">Estaba la reina batata\n\n
-Sentada en un plato de plata,\n\n
-El cocinero la miró\n\n
-Y la reina se abatató\n\n
-        \n\n
-La reina temblaba de miedo,\n\n
-El cocinero con el dedo,\n\n
-Que no que sí, que sí que no\n\n
-De malhumor la amenazó\n\n
-        \n\n
-Pensaba la reina batata:\n\n
-"Ahora me pincha y me mata"\n\n
-Y el cocinero murmuró:\n\n
-"Con ésta sí me quedo yo"\n\n
-        \n\n
-La reina vio por el rabillo\n\n
-Que estaba afilando el cuchillo\n\n
-Y tanto tanto se asustó\n\n
-Que rodó al suelo y se escondió\n\n
-        \n\n
-Entonces llegó de la plaza\n\n
-La nena menor de la casa,\n\n
-Cuando buscaba su yoyó\n\n
-En un rincón la descubrió\n\n
-        \n\n
-La nena en un trono de lata\n\n
-La puso a la reina batata\n\n
-Colita verde le brotó\n\n
-(A la reina batata, a la nena, no)\n\n
-Y esta canción se terminó</string>
+    <string name="cancion5_interprete">María Elena Walsh</string>
+    <string name="cancion5_letra">"Estaba la reina batata
+Sentada en un plato de plata,
+El cocinero la miró
+Y la reina se abatató
+        
+La reina temblaba de miedo,
+El cocinero con el dedo,
+Que no que sí, que sí que no
+De malhumor la amenazó
+        
+Pensaba la reina batata:
+"Ahora me pincha y me mata"
+Y el cocinero murmuró:
+"Con ésta sí me quedo yo"
+        
+La reina vio por el rabillo
+Que estaba afilando el cuchillo
+Y tanto tanto se asustó
+Que rodó al suelo y se escondió
+        
+Entonces llegó de la plaza
+La nena menor de la casa,
+Cuando buscaba su yoyó
+En un rincón la descubrió
+        
+La nena en un trono de lata
+La puso a la reina batata
+Colita verde le brotó
+(A la reina batata, a la nena, no)
+Y esta canción se terminó"</string>
+
+    <string name="cancion10_titulo">A la rueda rueda</string>
+    <string name="cancion10_autor">...</string>
+    <string name="cancion10_interprete">...</string>
+    <string name="cancion10_letra">"A la rueda rueda de pan y canela
+Dame un vintén que me voy a la escuela
+Vino la maestra me dio un coscorrón
+¡Que viva la pipa del vino Carlón!"</string>
+
+    <string name="cancion11_titulo">Arrorró mi niño</string>
+    <string name="cancion11_autor">...</string>
+    <string name="cancion11_interprete">...</string>
+    <string name="cancion11_letra">"Arrorró, mi niño
+Arrorró, mi Sol
+Arrorró pedazo
+de mi corazón
+
+Este niño lindo
+se quiere dormir
+y el pícaro sueño
+no quiere venir
+
+Este niño lindo
+que nació de noche
+quiere que lo lleven
+a pasear en coche
+
+Este niño lindo
+ya quiere dormir
+háganle la cuna
+de rosa y jazmín
+
+Arrorró, mi niño
+Arrorró, mi Sol
+Arrorró pedazo
+de mi corazón"</string>
+
+    <string name="cancion12_titulo">Arroz con leche</string>
+    <string name="cancion12_autor">...</string>
+    <string name="cancion12_interprete">...</string>
+    <string name="cancion12_letra">"Arroz con leche
+yo quiero jugar
+con unos amiguitos
+de San Nicolás.
+
+Que quieran correr,
+que quieran saltar,
+que abran la puerta
+para ir a jugar.
+
+Con estos sí,
+con estos no,
+con estos amiguitos
+disfruto yo."</string>
+
+    <string name="cancion13_titulo">Canción para bañar la luna</string>
+    <string name="cancion13_autor">María Elena Walsh</string>
+    <string name="cancion13_interprete">...</string>
+    <string name="cancion13_letra">"Ya la luna baja en camisón,
+a bañarse en un charquito con jabón.
+
+Ya la luna baja en tobogán,
+revoleando su sombrilla de azafrán.
+
+Quien la pesque con una cañita de bambú,
+se la lleva a Siu Kiu."</string>
+
+    <string name="cancion14_titulo">Caracol col col</string>
+    <string name="cancion14_autor">...</string>
+    <string name="cancion14_interprete">...</string>
+    <string name="cancion14_letra">"Caracol, col, col
+Saca tus cuernos al sol
+Que tu padre y tu madre
+ya los sacaron."</string>
+
+    <string name="cancion15_titulo">Cucú, cucú, cantaba la rana</string>
+    <string name="cancion15_autor">...</string>
+    <string name="cancion15_interprete">...</string>
+    <string name="cancion15_letra">"Cucú, cucú, cantaba la rana.
+Cucú, cucú, debajo del agua.
+
+Cucú, cucú, pasó un caballero.
+Cucú, cucú, con capa y sombrero.
+
+Cucú, cucú, pasó una señora.
+Cucú, cucú, con traje de cola.
+
+Cucú, cucú, pasó un marinero.
+Cucú, cucú, vendiendo romero.
+
+Cucú, cucú, le pidió un ramito.
+Cucú, cucú, no le quiso dar.
+
+Cucú, cucú, se puso muy triste
+Cucú, cucú y se echó a llorar."</string>
+
+    <string name="cancion16_titulo">¿Estrellita dónde estás?</string>
+    <string name="cancion16_autor">...</string>
+    <string name="cancion16_interprete">...</string>
+    <string name="cancion16_letra">"Estrellita dónde estás?
+me pregunto qué serás,
+en el cielo y en el mar
+un diamante de verdad.
+
+Estrellita dónde estás?
+me pregunto qué serás.
+
+Cuando el sol se ha ido ya
+cuando nada brilla más
+tu nos nuestras tu brillar
+brillas, brillas sin parar.
+
+Estrellita, dónde estás?
+me pregunto qué serás."</string>
+
+    <string name="cancion17_titulo">Fray Santiago</string>
+    <string name="cancion17_autor">...</string>
+    <string name="cancion17_interprete">...</string>
+    <string name="cancion17_letra">"Fray Santiago, Fray Santiago,
+¿duerme usted? ¿duerme usted?
+Suenan las campanas, suenan las campanas
+din, don, dan,
+din, don, dan."</string>
+
+    <string name="cancion18_titulo">Que llueva, que llueva</string>
+    <string name="cancion18_autor">...</string>
+    <string name="cancion18_interprete">...</string>
+    <string name="cancion18_letra">"Que llueva, que llueva
+la vieja esta en la cueva,
+los pajaritos cantan,
+la vieja se levanta.
+Que sí, que no,
+que caiga un chaparrón,
+arriba del colchón,
+con agua y jabón."</string>
+
+    <string name="cancion19_titulo">Saco una manito</string>
+    <string name="cancion19_autor">...</string>
+    <string name="cancion19_interprete">...</string>
+    <string name="cancion19_letra">"Saco una manita la hago bailar,
+la cierro, la abro y la vuelvo a guardar.
+Saco otra manita la hago bailar,
+la cierro, la abro y la vuelvo a guardar.
+Saco las dos manitas las hago bailar,
+las cierro, las abro y las vuelvo a guardar."</string>
 
 </resources>

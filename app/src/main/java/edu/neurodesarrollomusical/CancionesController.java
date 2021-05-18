@@ -20,14 +20,16 @@ public class CancionesController {
         public final int id;
         public final String titulo;
         public final String autor;
+        public final String interprete;
         public final String letra;
         public final int resourceId;
         public boolean es_favorita;
 
-        public Cancion(int id, String titulo, String autor, String letra, boolean es_favorita, int resourceId) {
+        public Cancion(int id, String titulo, String autor, String interprete, String letra, boolean es_favorita, int resourceId) {
             this.id = id;
             this.titulo = titulo;
             this.autor = autor;
+            this.interprete = interprete;
             this.letra = letra;
             this.es_favorita = es_favorita;
             this.resourceId = resourceId;
@@ -43,17 +45,24 @@ public class CancionesController {
 
         _canciones = new ArrayList<Cancion>();
 
-        NUMERO_CANCIONES = resources.getInteger(R.integer.canciones_cant);
+        //NUMERO_CANCIONES = resources.getInteger(R.integer.canciones_cant);
+        int[] cancionesIds = resources.getIntArray(R.array.canciones);
+        NUMERO_CANCIONES = cancionesIds.length;
 
         for (int i = 0; i < NUMERO_CANCIONES; i++) {
+            int id;
+            id = cancionesIds[i];
+
             Cancion c;
-            int tituloStringId = resources.getIdentifier("cancion" + i + "_titulo", "string", packageName);
-            int autorStringId = resources.getIdentifier("cancion" + i + "_autor", "string", packageName);
-            int letraStringId = resources.getIdentifier("cancion" + i + "_letra", "string", packageName);
-            int mp3RawId = resources.getIdentifier("m" + i, "raw", packageName);
+            int tituloStringId = resources.getIdentifier("cancion" + id + "_titulo", "string", packageName);
+            int autorStringId = resources.getIdentifier("cancion" + id + "_autor", "string", packageName);
+            int interpreteStringId = resources.getIdentifier("cancion" + id + "_interprete", "string", packageName);
+            int letraStringId = resources.getIdentifier("cancion" + id + "_letra", "string", packageName);
+            int mp3RawId = resources.getIdentifier("m" + id, "raw", packageName);
             boolean es_favorita = false;
             if (tituloStringId != 0 && letraStringId != 0 && mp3RawId != 0) {
-                c = new Cancion(i, resources.getString(tituloStringId), resources.getString(autorStringId), resources.getString(letraStringId), false, mp3RawId);
+                c = new Cancion(id, resources.getString(tituloStringId), resources.getString(autorStringId), resources.getString(interpreteStringId),
+                        resources.getString(letraStringId), false, mp3RawId);
                 _canciones.add(c);
             }
         }
@@ -64,11 +73,16 @@ public class CancionesController {
         return _canciones.toArray(lista);
     }
 
-    public Cancion obtenerCancion(int i) {
-        if (i < _canciones.size()) {
+    public Cancion obtenerCancionId(int id) {
+        for (int i = 0; i < NUMERO_CANCIONES; i++) {
+            if (_canciones.get(i).id == id) return _canciones.get(i);
+        }
+        return null;
+
+        /*if (i < _canciones.size()) {
             return _canciones.get(i);
         } else {
             return null;
-        }
+        }*/
     }
 }

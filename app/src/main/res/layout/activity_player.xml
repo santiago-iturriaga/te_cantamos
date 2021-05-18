@@ -21,8 +21,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/playerTextViewTitulo"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0sp"
+        android:text="...Autor..."
+        android:textSize="14dp"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/playerTextViewInterprete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/playerTextViewAutor"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="20sp"
-        android:text="Player"
+        android:text="...Interprete..."
         android:textSize="14dp"
         android:textStyle="italic"/>
 
@@ -31,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/playerLayoutProgreso"
-        android:layout_below="@id/playerTextViewAutor"
+        android:layout_below="@id/playerTextViewInterprete"
         android:background="@drawable/bg_letra_cancion">
 
         <TextView
@@ -41,7 +52,9 @@
             android:background="#07000000"
             android:padding="10sp"
             android:text="Player"
-            android:textSize="16dp" />
+            android:textSize="20dp"
+            android:lineSpacingMultiplier="1.2"
+            />
     </ScrollView>
 
     <LinearLayout

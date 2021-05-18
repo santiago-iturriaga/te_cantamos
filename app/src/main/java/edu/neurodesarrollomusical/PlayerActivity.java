@@ -24,7 +24,7 @@ public class PlayerActivity extends AppCompatActivity {
     MediaPlayer player;
     ImageView imageViewFav;
     ImageButton buttonPlayPause, buttonNext, buttonPrev;
-    TextView textViewTitulo, textViewAutor, textViewLetra, textViewTiempo;
+    TextView textViewTitulo, textViewAutor, textViewInterprete, textViewLetra, textViewTiempo;
     LinearLayout layoutProgreso;
 
     int[] canciones;
@@ -70,7 +70,7 @@ public class PlayerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (cancion_actual >= 0 && canciones != null) {
-                    CancionesController.Cancion c = CancionesController.getInstance(v.getContext()).obtenerCancion(canciones[cancion_actual]);
+                    CancionesController.Cancion c = CancionesController.getInstance(v.getContext()).obtenerCancionId(canciones[cancion_actual]);
                     if (c != null) {
                         c.es_favorita = !c.es_favorita;
                         setFavorito(imageViewFav, c.es_favorita);
@@ -82,6 +82,7 @@ public class PlayerActivity extends AppCompatActivity {
         layoutProgreso = findViewById(R.id.playerLayoutProgreso);
         textViewTitulo = findViewById(R.id.playerTextViewTitulo);
         textViewAutor = findViewById(R.id.playerTextViewAutor);
+        textViewInterprete = findViewById(R.id.playerTextViewInterprete);
         textViewLetra = findViewById(R.id.playerTextViewLetra);
         textViewTiempo = findViewById(R.id.playerTextViewTiempo);
 
@@ -107,10 +108,11 @@ public class PlayerActivity extends AppCompatActivity {
                 canciones = extras.getIntArray(EXTRA_CANCIONES);
                 cancion_actual = 0;
 
-                CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancion(canciones[cancion_actual]);
+                CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancionId(canciones[cancion_actual]);
                 if (c != null) {
                     textViewTitulo.setText(c.titulo);
                     textViewAutor.setText(c.autor);
+                    textViewInterprete.setText(c.interprete);
                     textViewLetra.setText(c.letra);
                     setFavorito(imageViewFav, c.es_favorita);
                 }
@@ -164,10 +166,11 @@ public class PlayerActivity extends AppCompatActivity {
 
         if (canciones != null && modo == MODO.INTERVENCION) {
             if (canciones.length > 0 && cancion_actual < canciones.length) {
-                CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancion(canciones[cancion_actual]);
+                CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancionId(canciones[cancion_actual]);
                 if (c != null) {
                     textViewTitulo.setText(c.titulo);
                     textViewAutor.setText(c.autor);
+                    textViewInterprete.setText(c.interprete);
                     textViewLetra.setText(c.letra);
                     setFavorito(imageViewFav, c.es_favorita);
 
