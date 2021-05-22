@@ -18,5 +18,5 @@ public class CancionEntity {
     public int cantidadVecesEsuchada;
 
     @ColumnInfo(name="es_favorita")
-    public Boolean esFavorita;
+    public boolean esFavorita;
 }

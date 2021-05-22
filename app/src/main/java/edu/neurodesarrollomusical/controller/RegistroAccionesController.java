@@ -2,6 +2,10 @@ package edu.neurodesarrollomusical.controller;
 
 import android.content.Context;
 
+import java.util.Date;
+
+import edu.neurodesarrollomusical.db.RegistroAccionEntity;
+
 public class RegistroAccionesController {
     private static RegistroAccionesController _instance;
 
@@ -12,7 +16,19 @@ public class RegistroAccionesController {
         return _instance;
     }
 
-    private RegistroAccionesController(Context context) {
+    Context _context;
 
+    private RegistroAccionesController(Context context) {
+        _context = context;
+    }
+
+    public void crearRegistroInicioCancion(String cancionTitulo, int cancionNumero) {
+        AppDatabaseController.getInstance(_context).getDB().registroAccionDAO().insert(
+                new RegistroAccionEntity(new Date(), cancionTitulo, cancionNumero, true, false));
+    }
+
+    public void crearRegistroFinCancion(String cancionTitulo, int cancionNumero) {
+        AppDatabaseController.getInstance(_context).getDB().registroAccionDAO().insert(
+                new RegistroAccionEntity(new Date(), cancionTitulo, cancionNumero, false, true));
     }
 }

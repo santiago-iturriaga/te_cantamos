@@ -10,6 +10,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import edu.neurodesarrollomusical.controller.CancionesController;
+import edu.neurodesarrollomusical.controller.SeguridadController;
 
 public class ListaCancionesActivity extends ListActivity {
     static final public String EXTRA_MODO = "MODO";
@@ -66,6 +67,7 @@ public class ListaCancionesActivity extends ListActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        if (!SeguridadController.getInstance(getApplicationContext()).checkAutenticado());
     }
 
     @Override

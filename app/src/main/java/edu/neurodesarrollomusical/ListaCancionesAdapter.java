@@ -88,7 +88,7 @@ public class ListaCancionesAdapter extends ArrayAdapter<CancionesController.Canc
         } else {
             imageViewFav.setVisibility(View.VISIBLE);
             imageViewSel.setVisibility(View.INVISIBLE);
-            setFavorito(imageViewFav, canciones[position].es_favorita);
+            setFavorito(imageViewFav, canciones[position].getEsFavorita());
         }
 
         return rowView;

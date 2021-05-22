@@ -11,7 +11,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Date;
+
+import edu.neurodesarrollomusical.controller.AppDatabaseController;
 import edu.neurodesarrollomusical.controller.CancionesController;
+import edu.neurodesarrollomusical.controller.RegistroAccionesController;
+import edu.neurodesarrollomusical.controller.SeguridadController;
+import edu.neurodesarrollomusical.db.RegistroAccionEntity;
 
 public class PlayerActivity extends AppCompatActivity {
     static final public String EXTRA_CANCIONES = "CANCIONES";
@@ -53,8 +59,7 @@ public class PlayerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (cancion_actual < canciones.length - 1) {
-                    cancion_actual++;
-                    start();
+                    start(cancion_actual+1);
                 } else {
                     //stop();
                     finish();
@@ -67,9 +72,10 @@ public class PlayerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (cancion_actual > 0) {
-                    cancion_actual--;
+                    start(cancion_actual-1);
+                } else {
+                    start(cancion_actual);
                 }
-                start();
             }
         });
 
@@ -80,8 +86,8 @@ public class PlayerActivity extends AppCompatActivity {
                 if (cancion_actual >= 0 && canciones != null) {
                     CancionesController.Cancion c = CancionesController.getInstance(v.getContext()).obtenerCancionId(canciones[cancion_actual]);
                     if (c != null) {
-                        c.es_favorita = !c.es_favorita;
-                        setFavorito(imageViewFav, c.es_favorita);
+                        c.setEsFavorita(getApplicationContext(), !c.getEsFavorita());
+                        setFavorito(imageViewFav, c.getEsFavorita());
                     }
                 }
             }
@@ -134,7 +140,7 @@ public class PlayerActivity extends AppCompatActivity {
                 buttonPrev.setVisibility(View.VISIBLE);
                 layoutProgreso.setVisibility(View.VISIBLE);
                 textViewTiempo.setVisibility(View.VISIBLE);
-                start();
+                start(cancion_actual);
                 break;
             case SOLO_LETRA:
                 canciones = extras.getIntArray(EXTRA_CANCIONES);
@@ -156,7 +162,7 @@ public class PlayerActivity extends AppCompatActivity {
                         textViewInterprete.setVisibility(View.INVISIBLE);
                     }
                     textViewLetra.setText(c.letra);
-                    setFavorito(imageViewFav, c.es_favorita);
+                    setFavorito(imageViewFav, c.getEsFavorita());
                 }
 
                 layoutProgreso.setVisibility(View.INVISIBLE);
@@ -210,6 +216,7 @@ public class PlayerActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        if (!SeguridadController.getInstance(getApplicationContext()).checkAutenticado());
     }
 
     @Override
@@ -233,12 +240,13 @@ public class PlayerActivity extends AppCompatActivity {
         stop();
     }
 
-    protected void start() {
+    protected void start(int nueva_cancion) {
         stop();
         updateProgreso();
 
         if (canciones != null && modo == MODO.INTERVENCION) {
-            if (canciones.length > 0 && cancion_actual < canciones.length) {
+            if (canciones.length > 0 && nueva_cancion < canciones.length) {
+                cancion_actual = nueva_cancion;
                 CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancionId(canciones[cancion_actual]);
                 if (c != null) {
                     textViewTitulo.setText(c.titulo);
@@ -255,7 +263,7 @@ public class PlayerActivity extends AppCompatActivity {
                         textViewInterprete.setVisibility(View.INVISIBLE);
                     }
                     textViewLetra.setText(c.letra);
-                    setFavorito(imageViewFav, c.es_favorita);
+                    setFavorito(imageViewFav, c.getEsFavorita());
 
                     player = MediaPlayer.create(PlayerActivity.this, c.resourceId);
                     player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -268,6 +276,7 @@ public class PlayerActivity extends AppCompatActivity {
                     textViewTiempo.setText(displayTime(player.getDuration()));
 
                     player.start();
+                    RegistroAccionesController.getInstance(getApplicationContext()).crearRegistroInicioCancion(c.titulo, c.id);
                 }
             }
         }
@@ -293,6 +302,9 @@ public class PlayerActivity extends AppCompatActivity {
             buttonPlayPause.setBackgroundResource(R.drawable.ic_play_control);
             if (player.isPlaying()) player.stop();
             player.release();
+
+            CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancionId(canciones[cancion_actual]);
+            RegistroAccionesController.getInstance(getApplicationContext()).crearRegistroFinCancion(c.titulo, c.id);
         }
     }
 

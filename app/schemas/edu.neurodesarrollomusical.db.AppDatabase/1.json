@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "3db867219d4c9c055b3f90516cc5e251",
+    "identityHash": "a0b29154a9ec439dc6377c4a5fbdcf91",
     "entities": [
       {
         "tableName": "cancion_entity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `nombre_cancion` TEXT, `cantidad_veces_esuchada` INTEGER NOT NULL, `es_favorita` INTEGER, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `nombre_cancion` TEXT, `cantidad_veces_esuchada` INTEGER NOT NULL, `es_favorita` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -30,7 +30,7 @@
             "fieldPath": "esFavorita",
             "columnName": "es_favorita",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -44,7 +44,7 @@
       },
       {
         "tableName": "registro_accion_entity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `fecha_accion` INTEGER, `nombre_cancion` TEXT, `numero_cancion` INTEGER NOT NULL, `accion_inicio` INTEGER, `accion_fin` INTEGER, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fecha_accion` INTEGER, `nombre_cancion` TEXT, `numero_cancion` INTEGER NOT NULL, `accion_inicio` INTEGER NOT NULL, `accion_fin` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -74,20 +74,20 @@
             "fieldPath": "accionInicio",
             "columnName": "accion_inicio",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "accionFin",
             "columnName": "accion_fin",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           }
         ],
         "primaryKey": {
           "columnNames": [
             "id"
           ],
-          "autoGenerate": false
+          "autoGenerate": true
         },
         "indices": [],
         "foreignKeys": []
@@ -96,7 +96,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3db867219d4c9c055b3f90516cc5e251')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a0b29154a9ec439dc6377c4a5fbdcf91')"
     ]
   }
 }

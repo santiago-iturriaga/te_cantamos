@@ -19,7 +19,7 @@ public class AppDatabaseController {
     AppDatabase _db;
 
     private AppDatabaseController(Context context) {
-        _db = Room.databaseBuilder(context, AppDatabase.class, "neurodesarrollo_musical").build();
+        _db = Room.databaseBuilder(context, AppDatabase.class, "neurodesarrollo_musical").allowMainThreadQueries().build();
     }
 
     public AppDatabase getDB() {

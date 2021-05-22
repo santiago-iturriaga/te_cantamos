@@ -4,8 +4,11 @@ import android.content.Context;
 import android.content.res.Resources;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import edu.neurodesarrollomusical.R;
+import edu.neurodesarrollomusical.db.AppDatabase;
+import edu.neurodesarrollomusical.db.CancionEntity;
 
 public class CancionesController {
     private static CancionesController _instance;
@@ -24,16 +27,34 @@ public class CancionesController {
         public final String interprete;
         public final String letra;
         public final int resourceId;
-        public boolean es_favorita;
+        public CancionEntity entity;
 
-        public Cancion(int id, String titulo, String autor, String interprete, String letra, boolean es_favorita, int resourceId) {
+        public Cancion(int id, String titulo, String autor, String interprete,
+                       String letra, int resourceId) {
             this.id = id;
             this.titulo = titulo;
             this.autor = autor;
             this.interprete = interprete;
             this.letra = letra;
-            this.es_favorita = es_favorita;
             this.resourceId = resourceId;
+            this.entity = null;
+        }
+
+        public boolean getEsFavorita() {
+            if (entity != null) {
+                return entity.esFavorita;
+            } else {
+                return false;
+            }
+        }
+
+        public void setEsFavorita(Context context, boolean favorita) {
+            if (entity != null) {
+                if (entity.esFavorita != favorita) {
+                    entity.esFavorita = favorita;
+                    AppDatabaseController.getInstance(context).getDB().cancionDAO().update(entity);
+                }
+            }
         }
     }
 
@@ -43,6 +64,8 @@ public class CancionesController {
     private CancionesController(Context context) {
         String packageName = context.getApplicationContext().getPackageName();
         Resources resources = context.getApplicationContext().getResources();
+
+        List<CancionEntity> cancionesDB = AppDatabaseController.getInstance(context).getDB().cancionDAO().getAll();
 
         _canciones = new ArrayList<Cancion>();
 
@@ -60,10 +83,27 @@ public class CancionesController {
             int interpreteStringId = resources.getIdentifier("cancion" + id + "_interprete", "string", packageName);
             int letraStringId = resources.getIdentifier("cancion" + id + "_letra", "string", packageName);
             int mp3RawId = resources.getIdentifier("m" + id, "raw", packageName);
-            boolean es_favorita = false;
+
             if (tituloStringId != 0 && letraStringId != 0 && mp3RawId != 0) {
-                c = new Cancion(id, resources.getString(tituloStringId), resources.getString(autorStringId), resources.getString(interpreteStringId),
-                        resources.getString(letraStringId), false, mp3RawId);
+                c = new Cancion(id, resources.getString(tituloStringId), resources.getString(autorStringId),
+                        resources.getString(interpreteStringId),
+                        resources.getString(letraStringId), mp3RawId);
+
+                for (int j = 0; j < cancionesDB.size() && c.entity==null; j++) {
+                    if (cancionesDB.get(j).id == c.id) {
+                        c.entity = cancionesDB.get(j);
+                    }
+                }
+                if (c.entity == null) {
+                    CancionEntity e = new CancionEntity();
+                    e.cantidadVecesEsuchada = 0;
+                    e.nombreCancion = c.titulo;
+                    e.id = c.id;
+                    e.esFavorita = false;
+                    AppDatabaseController.getInstance(context).getDB().cancionDAO().insert(e);
+                    c.entity = e;
+                }
+
                 _canciones.add(c);
             }
         }
@@ -77,7 +117,7 @@ public class CancionesController {
     public Cancion[] listarCancionesFavoritas() {
         ArrayList<Cancion> lista = new ArrayList<Cancion>();
         for (int i=0; i<_canciones.size(); i++) {
-            if (_canciones.get(i).es_favorita) {
+            if (_canciones.get(i).getEsFavorita()) {
                 lista.add(_canciones.get(i));
             }
         }
