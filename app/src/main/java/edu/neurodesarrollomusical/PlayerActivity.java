@@ -186,7 +186,7 @@ public class PlayerActivity extends AppCompatActivity {
             return true;
         }
         else {
-            p.setVisibility(View.INVISIBLE);
+            p.setVisibility(View.GONE);
             return false;
         }
     }
@@ -242,7 +242,6 @@ public class PlayerActivity extends AppCompatActivity {
 
     protected void start(int nueva_cancion) {
         stop();
-        updateProgreso();
 
         if (canciones != null && modo == MODO.INTERVENCION) {
             if (canciones.length > 0 && nueva_cancion < canciones.length) {
@@ -280,6 +279,8 @@ public class PlayerActivity extends AppCompatActivity {
                 }
             }
         }
+
+        updateProgreso();
     }
 
     public String displayTime(int duracion) {

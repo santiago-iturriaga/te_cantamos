@@ -3,6 +3,7 @@ package edu.neurodesarrollomusical.controller;
 import android.content.Context;
 
 import java.util.Date;
+import java.util.List;
 
 import edu.neurodesarrollomusical.db.RegistroAccionEntity;
 
@@ -30,5 +31,9 @@ public class RegistroAccionesController {
     public void crearRegistroFinCancion(String cancionTitulo, int cancionNumero) {
         AppDatabaseController.getInstance(_context).getDB().registroAccionDAO().insert(
                 new RegistroAccionEntity(new Date(), cancionTitulo, cancionNumero, false, true));
+    }
+
+    public List<RegistroAccionEntity> obtenerBatchRegistro() {
+        return AppDatabaseController.getInstance(_context).getDB().registroAccionDAO().getAllBatch();
     }
 }

@@ -26,13 +26,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button buttonDebug = findViewById(R.id.mainButtonDebug);
+        buttonDebug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), DebugActivity.class));
+            }
+        });
+
         Button buttonAyuda = findViewById(R.id.mainButtonAyuda);
         buttonAyuda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 v.setPressed(true);
-                Intent i = new Intent(MainActivity.this, AyudaActivity.class);
-                startActivity(i);
+                startActivity(new Intent(MainActivity.this, AyudaActivity.class));
             }
         });
 
