@@ -19,26 +19,52 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="vertical">
-        <EditText
-            android:id="@+id/txtLoginUser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="pepe" />
-        <EditText
-            android:id="@+id/txtLoginPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="coco"
-            android:inputType="textPassword"/>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Usuario"
+            android:scrollbarSize="25dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtLoginUser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:text="pepe" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Space android:layout_width="match_parent"
+            android:layout_height="10dp"></Space>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/black"
+            android:hint="Contraseña"
+            app:passwordToggleTint="@color/white"
+            app:passwordToggleEnabled="true"
+            android:scrollbarSize="25dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtLoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:inputType="textPassword"
+                android:text="coco" />
+            </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
-
     <Button
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/loginButtonAceptar"
-        android:text="Aceptar" />
+        android:text="Aceptar"
+        android:textSize="20dp" />
 </RelativeLayout>
 
 

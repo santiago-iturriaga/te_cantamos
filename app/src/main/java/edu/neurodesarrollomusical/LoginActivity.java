@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import edu.neurodesarrollomusical.controller.SeguridadController;
 
 public class LoginActivity extends AppCompatActivity {
@@ -21,8 +23,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLoginAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText user = findViewById(R.id.txtLoginUser);
-                EditText pass = findViewById(R.id.txtLoginPassword);
+                TextInputEditText user = findViewById(R.id.txtLoginUser);
+                TextInputEditText pass = findViewById(R.id.txtLoginPassword);
 
                 String userTxt = user.getText().toString();
                 String passTxt = pass.getText().toString();
