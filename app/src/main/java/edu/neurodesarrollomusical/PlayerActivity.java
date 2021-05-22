@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.Arrays;
+import edu.neurodesarrollomusical.controller.CancionesController;
 
 public class PlayerActivity extends AppCompatActivity {
     static final public String EXTRA_CANCIONES = "CANCIONES";

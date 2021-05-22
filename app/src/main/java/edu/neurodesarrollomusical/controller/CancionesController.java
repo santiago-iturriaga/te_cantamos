@@ -1,15 +1,16 @@
-package edu.neurodesarrollomusical;
+package edu.neurodesarrollomusical.controller;
 
 import android.content.Context;
 import android.content.res.Resources;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+
+import edu.neurodesarrollomusical.R;
 
 public class CancionesController {
     private static CancionesController _instance;
 
-    public static CancionesController getInstance(Context context) {
+    public synchronized static CancionesController getInstance(Context context) {
         if (_instance == null) {
             _instance = new CancionesController(context);
         }

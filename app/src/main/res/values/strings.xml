@@ -4,4 +4,7 @@
         "Aquí va una ayuda para las mamás sobre cómo realizar las intervenciones.\n\n"
         "El contenido de esta ayuda aún está pendiente.\n\n"
     </string>
+
+    <string name="configFile">appConfigFile</string>
+    <string name="configFile_autenticadoKey">autenticado</string>
 </resources>

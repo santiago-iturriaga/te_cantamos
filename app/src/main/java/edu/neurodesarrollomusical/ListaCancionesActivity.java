@@ -1,6 +1,5 @@
 package edu.neurodesarrollomusical;
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +9,7 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-
-import static java.security.AccessController.getContext;
+import edu.neurodesarrollomusical.controller.CancionesController;
 
 public class ListaCancionesActivity extends ListActivity {
     static final public String EXTRA_MODO = "MODO";

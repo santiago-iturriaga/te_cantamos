@@ -8,9 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
+
+import edu.neurodesarrollomusical.controller.CancionesController;
+import edu.neurodesarrollomusical.controller.SeguridadController;
 
 public class MainActivity extends AppCompatActivity {
     static final public String EXTRA_CANCIONES = "CANCIONES";
@@ -136,6 +137,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(i, MODO.PLAY_CANCIONES_ELEGIDAS.ordinal());
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (!SeguridadController.getInstance(getApplicationContext()).checkAutenticado());
     }
 
     @Override
