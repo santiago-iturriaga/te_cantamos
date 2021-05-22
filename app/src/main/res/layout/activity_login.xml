@@ -57,14 +57,21 @@
                 android:inputType="textPassword"
                 android:text="coco" />
             </com.google.android.material.textfield.TextInputLayout>
+
+        <Space android:layout_width="match_parent"
+            android:layout_height="10dp"></Space>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loginButtonAceptar"
+            android:text="Entrar"
+            android:textSize="25dp"
+            android:padding="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/bg_button" />
     </LinearLayout>
-    <Button
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/loginButtonAceptar"
-        android:text="Aceptar"
-        android:textSize="20dp" />
+
 </RelativeLayout>
 
 
