@@ -3,12 +3,15 @@ package edu.neurodesarrollomusical;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 
 import edu.neurodesarrollomusical.controller.RegistroAccionesController;
+import edu.neurodesarrollomusical.controller.SeguridadController;
 import edu.neurodesarrollomusical.db.RegistroAccionEntity;
 
 public class DebugActivity extends AppCompatActivity {
@@ -17,6 +20,15 @@ public class DebugActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_debug);
+
+        Button logoutButton = findViewById(R.id.debugButtonLogout);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SeguridadController.getInstance(getApplicationContext()).setAutenticado(false);
+                finish();
+            }
+        });
     }
 
     @Override

@@ -34,8 +34,12 @@ public class SeguridadController {
             return true;
     }
 
-    public void setAutenticado() {
-        _autenticado = true;
-        ConfigController.getInstance(_context).setAutenticado();
+    public void setAutenticado(boolean autenticado) {
+        _autenticado = autenticado;
+        ConfigController.getInstance(_context).setAutenticado(autenticado);
+    }
+
+    public boolean getAutenticado() {
+        return ConfigController.getInstance(_context).getAutenticado();
     }
 }

@@ -35,9 +35,9 @@ public class ConfigController {
             return false;
     }
 
-    public void setAutenticado() {
+    public void setAutenticado(boolean autenticado) {
         SharedPreferences.Editor myEdit = _sharedPreferences.edit();
-        myEdit.putBoolean(_context.getResources().getString(R.string.configFile_autenticadoKey), true);
+        myEdit.putBoolean(_context.getResources().getString(R.string.configFile_autenticadoKey), autenticado);
         myEdit.commit();
     }
 }
