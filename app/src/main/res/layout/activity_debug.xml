@@ -9,7 +9,15 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/debugButtonSendLog"
+        android:layout_margin="5sp"
+        android:text="Enviar log"></Button>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/debugButtonLogout"
+        android:layout_below="@id/debugButtonSendLog"
         android:layout_margin="5sp"
         android:text="Logout"></Button>
 

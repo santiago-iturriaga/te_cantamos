@@ -33,8 +33,7 @@ public class LoginActivity extends AppCompatActivity {
                 String userTxt = user.getText().toString();
                 String passTxt = pass.getText().toString();
 
-                if (userTxt.equals("pepe") && passTxt.equals("coco")) {
-                    SeguridadController.getInstance(getApplicationContext()).setAutenticado(true);
+                if (SeguridadController.getInstance(getApplicationContext()).login(userTxt, passTxt)) {
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 } else {
                     MensajesHelper.showText(v.getContext(), "Usuario o contraseña incorrecta.");

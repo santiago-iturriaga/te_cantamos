@@ -35,9 +35,25 @@ public class ConfigController {
             return false;
     }
 
-    public void setAutenticado(boolean autenticado) {
+    public String getUsuario() {
+        if (_sharedPreferences.contains(_context.getResources().getString(R.string.configFile_usuarioKey)))
+        {
+            return _sharedPreferences.getString(_context.getResources().getString(R.string.configFile_usuarioKey), null);
+        } else
+            return null;
+    }
+
+    public synchronized void setAutenticado(String usuario) {
         SharedPreferences.Editor myEdit = _sharedPreferences.edit();
-        myEdit.putBoolean(_context.getResources().getString(R.string.configFile_autenticadoKey), autenticado);
+        myEdit.putBoolean(_context.getResources().getString(R.string.configFile_autenticadoKey), true);
+        myEdit.putString(_context.getResources().getString(R.string.configFile_usuarioKey), usuario);
+        myEdit.commit();
+    }
+
+    public synchronized void unsetAutenticado() {
+        SharedPreferences.Editor myEdit = _sharedPreferences.edit();
+        myEdit.putBoolean(_context.getResources().getString(R.string.configFile_autenticadoKey), false);
+        myEdit.remove(_context.getResources().getString(R.string.configFile_usuarioKey));
         myEdit.commit();
     }
 }

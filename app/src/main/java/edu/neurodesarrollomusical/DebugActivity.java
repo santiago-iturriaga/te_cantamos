@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -25,8 +26,22 @@ public class DebugActivity extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SeguridadController.getInstance(getApplicationContext()).setAutenticado(false);
+                SeguridadController.getInstance(getApplicationContext()).logout();
                 finish();
+            }
+        });
+
+        Button sendLogButton = findViewById(R.id.debugButtonSendLog);
+        sendLogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    RegistroAccionesController.getInstance(getApplicationContext()).enviarLog();
+                    MensajesHelper.showText(getApplicationContext(), "Listo!");
+                } catch (IOException e) {
+                    //e.printStackTrace();
+                    MensajesHelper.showText(getApplicationContext(), e.getMessage());
+                }
             }
         });
     }

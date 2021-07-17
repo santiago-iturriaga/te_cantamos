@@ -6,6 +6,7 @@ import android.content.Intent;
 import org.jetbrains.annotations.NotNull;
 
 import edu.neurodesarrollomusical.LoginActivity;
+import android.provider.Settings.Secure;
 
 public class SeguridadController {
     private static SeguridadController _instance;
@@ -34,12 +35,25 @@ public class SeguridadController {
             return true;
     }
 
-    public void setAutenticado(boolean autenticado) {
-        _autenticado = autenticado;
-        ConfigController.getInstance(_context).setAutenticado(autenticado);
+    public boolean login(String usuario, String contrasenia) {
+        //if (usuario.equals("pepe") && contrasenia.equals("coco")) {
+        if (contrasenia.equals("coco")) {
+            ConfigController.getInstance(_context).setAutenticado(usuario);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void logout() {
+        ConfigController.getInstance(_context).unsetAutenticado();
     }
 
     public boolean getAutenticado() {
         return ConfigController.getInstance(_context).getAutenticado();
+    }
+
+    public String getUsuario() {
+        return ConfigController.getInstance(_context).getUsuario();
     }
 }
