@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class DebugActivity extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SeguridadController.getInstance(getApplicationContext()).logout();
+                SeguridadController.getInstance().logout(getApplicationContext());
                 finish();
             }
         });
@@ -35,13 +36,8 @@ public class DebugActivity extends AppCompatActivity {
         sendLogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    RegistroAccionesController.getInstance(getApplicationContext()).enviarLog();
-                    MensajesHelper.showText(getApplicationContext(), "Listo!");
-                } catch (IOException e) {
-                    //e.printStackTrace();
-                    MensajesHelper.showText(getApplicationContext(), e.getMessage());
-                }
+                RegistroAccionesController.getInstance().enviarLog(getApplicationContext());
+                MensajesHelper.showText(getApplicationContext(), "Listo!");
             }
         });
     }
@@ -49,7 +45,7 @@ public class DebugActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        List<RegistroAccionEntity> reg = RegistroAccionesController.getInstance(getApplicationContext()).obtenerBatchRegistro();
+        List<RegistroAccionEntity> reg = RegistroAccionesController.getInstance().obtenerBatchRegistro(getApplicationContext());
         TextView textView = findViewById(R.id.debugTextView);
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -63,7 +59,7 @@ public class DebugActivity extends AppCompatActivity {
             texto.append(":");
             texto.append(aux.nombreCancion);
             texto.append(" ");
-            texto.append(simpleDateFormat.format(aux.fechaAccion));
+            texto.append(simpleDateFormat.format(new Date(aux.fechaAccion)));
             texto.append(" ");
             if (aux.accionInicio) {
                 texto.append(" <INICIO>");

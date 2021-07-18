@@ -216,7 +216,7 @@ public class PlayerActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (!SeguridadController.getInstance(getApplicationContext()).checkAutenticado());
+        if (!SeguridadController.getInstance().checkAutenticado(getApplicationContext()));
     }
 
     @Override
@@ -275,7 +275,7 @@ public class PlayerActivity extends AppCompatActivity {
                     textViewTiempo.setText(displayTime(player.getDuration()));
 
                     player.start();
-                    RegistroAccionesController.getInstance(getApplicationContext()).crearRegistroInicioCancion(c.titulo, c.id);
+                    RegistroAccionesController.getInstance().crearRegistroInicioCancion(getApplicationContext(), c.titulo, c.id);
                 }
             }
         }
@@ -305,7 +305,7 @@ public class PlayerActivity extends AppCompatActivity {
             player.release();
 
             CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancionId(canciones[cancion_actual]);
-            RegistroAccionesController.getInstance(getApplicationContext()).crearRegistroFinCancion(c.titulo, c.id);
+            RegistroAccionesController.getInstance().crearRegistroFinCancion(getApplicationContext(), c.titulo, c.id);
         }
     }
 

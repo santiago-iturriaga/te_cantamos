@@ -67,7 +67,7 @@ public class ListaCancionesActivity extends ListActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (!SeguridadController.getInstance(getApplicationContext()).checkAutenticado());
+        if (!SeguridadController.getInstance().checkAutenticado(getApplicationContext()));
     }
 
     @Override

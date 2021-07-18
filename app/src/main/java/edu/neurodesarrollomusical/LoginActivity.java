@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        if (SeguridadController.getInstance(getApplicationContext()).getAutenticado()) {
+        if (SeguridadController.getInstance().getAutenticado(getApplicationContext())) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
 
@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
                 String userTxt = user.getText().toString();
                 String passTxt = pass.getText().toString();
 
-                if (SeguridadController.getInstance(getApplicationContext()).login(userTxt, passTxt)) {
+                if (SeguridadController.getInstance().login(getApplicationContext(), userTxt, passTxt)) {
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 } else {
                     MensajesHelper.showText(v.getContext(), "Usuario o contraseña incorrecta.");

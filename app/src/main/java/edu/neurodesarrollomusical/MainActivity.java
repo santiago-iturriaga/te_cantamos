@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (!SeguridadController.getInstance(getApplicationContext()).checkAutenticado());
+        if (!SeguridadController.getInstance().checkAutenticado(getApplicationContext()));
     }
 
     @Override
