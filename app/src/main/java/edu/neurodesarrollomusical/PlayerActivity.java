@@ -177,10 +177,11 @@ public class PlayerActivity extends AppCompatActivity {
 
     private Boolean setImagenProgreso(ImageView p, int pos) {
         if (canciones.length > pos && canciones.length > 1) {
-            p.setVisibility(View.VISIBLE);
             if (cancion_actual > pos) {
-                p.setImageResource(R.drawable.ic_play_progreso_listo);
+                p.setVisibility(View.INVISIBLE);
+                //p.setImageResource(R.drawable.ic_play_progreso_listo);
             } else {
+                p.setVisibility(View.VISIBLE);
                 p.setImageResource(R.drawable.ic_play_progreso);
             }
             return true;

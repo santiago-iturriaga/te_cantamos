@@ -46,8 +46,18 @@ public class ListaCancionesActivity extends ListActivity {
                 Intent data = new Intent();
                 ListaCancionesActivity listaCanciones = (ListaCancionesActivity) v.getContext();
                 ListAdapter adapter = listaCanciones.getListAdapter();
-                data.putExtra(MainActivity.EXTRA_CANCIONES, ((ListaCancionesAdapter)adapter).getSeleccionadasId());
-                setResult(RESULT_OK,data);
+                int[] seleccion = ((ListaCancionesAdapter) adapter).getSeleccionadasId();
+                int num = getApplicationContext().getResources().getInteger(R.integer.intervencion_max_canciones);
+                if (seleccion.length == num) {
+                    data.putExtra(MainActivity.EXTRA_CANCIONES, seleccion);
+                } else {
+                    int[] seleccionFinal = new int[num];
+                    for (int i = 0; i < num; i++) {
+                        seleccionFinal[i] = seleccion[i % seleccion.length];
+                    }
+                    data.putExtra(MainActivity.EXTRA_CANCIONES, seleccionFinal);
+                }
+                setResult(RESULT_OK, data);
                 finish();
             }
         });
@@ -67,7 +77,7 @@ public class ListaCancionesActivity extends ListActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (!SeguridadController.getInstance().checkAutenticado(getApplicationContext()));
+        if (!SeguridadController.getInstance().checkAutenticado(getApplicationContext())) ;
     }
 
     @Override
@@ -83,7 +93,7 @@ public class ListaCancionesActivity extends ListActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        ((BaseAdapter)getListAdapter()).notifyDataSetChanged();
+        ((BaseAdapter) getListAdapter()).notifyDataSetChanged();
     }
 
     @Override
@@ -95,10 +105,13 @@ public class ListaCancionesActivity extends ListActivity {
     public void onListItemClick(ListView l, View v, int position, long id) {
         switch (modo) {
             case ELEGIR_UNA_CANCION_PARA_INTERVENCION:
-                int[] elegida = {canciones[position].id};
+                int num = getApplicationContext().getResources().getInteger(R.integer.intervencion_max_canciones);
+                int[] elegida = new int[num];
+                for (int i = 0; i < num; i++) elegida[i] = canciones[position].id;
+                //int[] elegida = {canciones[position].id};
                 Intent data = new Intent();
                 data.putExtra(MainActivity.EXTRA_CANCIONES, elegida);
-                setResult(RESULT_OK,data);
+                setResult(RESULT_OK, data);
                 finish();
                 break;
             case ELEGIR_CANCIONES_PARA_INTERVENCION:

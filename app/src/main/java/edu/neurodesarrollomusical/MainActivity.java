@@ -48,28 +48,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int max = v.getContext().getResources().getInteger(R.integer.intervencion_max_canciones);
+                int canciones[] = new int[max];
+
                 CancionesController.Cancion fav[] = CancionesController.getInstance(v.getContext()).listarCancionesFavoritas();
-                if (max > fav.length) max = fav.length;
 
-                if (max > 0) {
-                    CancionesController.Cancion aux;
-                    Random rnd = new Random();
-                    for (int i = 0; i < max; i++) {
-                        int pos = Math.abs(rnd.nextInt()) % (fav.length - i);
-                        int last = fav.length - i - 1;
+                if (fav.length > 0) {
+                    if (fav.length > max) {
+                        CancionesController.Cancion aux;
+                        Random rnd = new Random();
+                        for (int i = 0; i < max; i++) {
+                            int pos = Math.abs(rnd.nextInt()) % (fav.length - i);
+                            int last = fav.length - i - 1;
 
-                        if (pos != last) {
-                            aux = fav[last];
-                            fav[last] = fav[pos];
-                            fav[pos] = aux;
+                            if (pos != last) {
+                                aux = fav[last];
+                                fav[last] = fav[pos];
+                                fav[pos] = aux;
+                            }
                         }
-                    }
 
-                    int canciones[] = new int[max];
-                    int j = 0;
-                    for (int i = fav.length - max; i < fav.length; i++) {
-                        canciones[j] = fav[i].id;
-                        j++;
+                        int j = 0;
+                        for (int i = fav.length - max; i < fav.length; i++) {
+                            canciones[j] = fav[i].id;
+                            j++;
+                        }
+                    } else {
+                        for (int i = 0; i < max; i++) {
+                            canciones[i] = fav[i % fav.length].id;
+                        }
                     }
 
                     Intent i = new Intent(MainActivity.this, PlayerActivity.class);

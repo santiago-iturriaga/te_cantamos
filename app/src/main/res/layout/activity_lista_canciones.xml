@@ -24,5 +24,5 @@
         android:layout_marginTop="10sp"
         android:layout_marginBottom="10sp"
         android:background="@drawable/bg_button"
-        android:text="Listo"></Button>
+        android:text="Comenzar"></Button>
 </RelativeLayout>
