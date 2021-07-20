@@ -2,6 +2,7 @@
 
 Ejemplo de json:
 
+```
 {
   "usuario": "pepe",
   "log": [
@@ -87,3 +88,4 @@ Ejemplo de json:
     }
   ]
 }
+```
