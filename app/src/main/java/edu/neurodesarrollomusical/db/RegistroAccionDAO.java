@@ -9,7 +9,7 @@ import java.util.List;
 
 @Dao
 public interface RegistroAccionDAO {
-    @Query("SELECT * FROM registro_accion_entity LIMIT 1000")
+    @Query("SELECT * FROM registro_accion_entity LIMIT 100")
     List<RegistroAccionEntity> getAllBatch();
 
     @Query("SELECT * FROM registro_accion_entity")
@@ -26,4 +26,7 @@ public interface RegistroAccionDAO {
 
     @Delete
     void deleteAll(RegistroAccionEntity... registros);
+
+    @Query("DELETE FROM registro_accion_entity WHERE id IN (:ids)")
+    void deleteItemByIds(List<Long> ids);
 }

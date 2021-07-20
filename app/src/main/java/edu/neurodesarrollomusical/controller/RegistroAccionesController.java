@@ -2,12 +2,14 @@ package edu.neurodesarrollomusical.controller;
 
 import android.content.Context;
 import android.provider.Settings;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,7 +39,8 @@ public class RegistroAccionesController {
     OkHttpClient client = new OkHttpClient();
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
-    private RegistroAccionesController() {    }
+    private RegistroAccionesController() {
+    }
 
     public void crearRegistroInicioCancion(Context context, String cancionTitulo, int cancionNumero) {
         AppDatabaseController.getInstance(context).getDB().registroAccionDAO().insert(
@@ -53,7 +56,7 @@ public class RegistroAccionesController {
         return AppDatabaseController.getInstance(context).getDB().registroAccionDAO().getAllBatch();
     }
 
-    void postJson(String url, String json) {
+    void postJson(Context context, List<RegistroAccionEntity> reg, String url, String json) {
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder()
                 .url(url)
@@ -64,27 +67,35 @@ public class RegistroAccionesController {
             @Override
             public void onFailure(Call call, IOException e) {
                 // Something went wrong
-                String s = e.getMessage();
+                // String s = e.getMessage();
+                Log.e(this.getClass().toString(), e.getMessage());
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
-                    String responseStr = response.body().string();
+                    // String responseStr = response.body().string();
                     // Do what you want to do with the response.
+                    Log.i(this.getClass().toString(), response.message());
+
+                    try {
+                        List<Long> ids = new ArrayList<Long>();
+                        for (int i = 0; i < reg.size(); i++) {
+                            ids.add(Long.valueOf(reg.get(i).id));
+                        }
+                        AppDatabaseController.getInstance(context).getDB().registroAccionDAO().deleteItemByIds(ids);
+                    } catch (Exception ex) {
+                        Log.e(this.getClass().toString(), ex.getMessage());
+                    }
                 } else {
                     // Request not successful
+                    Log.e(this.getClass().toString(), response.message());
                 }
             }
         });
-        //.execute();
-        //return response.body().string();
     }
 
-    String buildJson(Context context) {
-        List<RegistroAccionEntity> reg = obtenerBatchRegistro(context);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
+    String buildJson(Context context, List<RegistroAccionEntity> reg) {
         String usuario = SeguridadController.getInstance().getUsuario(context);
         if (usuario == null) {
             usuario = Settings.Secure.getString(context.getContentResolver(),
@@ -113,8 +124,11 @@ public class RegistroAccionesController {
     }
 
     public void enviarLog(Context context) {
-        String json = buildJson(context);
-        postJson("http://192.168.50.242:8008/app", json);
+        List<RegistroAccionEntity> reg = obtenerBatchRegistro(context);
+        if (reg.size() > 0) {
+            String json = buildJson(context, reg);
+            postJson(context, reg, context.getResources().getString(R.string.server_IP), json);
+        }
     }
 }
 
