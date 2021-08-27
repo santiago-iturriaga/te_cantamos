@@ -9,6 +9,9 @@ import java.util.List;
 
 @Dao
 public interface RegistroAccionDAO {
+    @Query("SELECT * FROM registro_accion_entity LIMIT 1")
+    List<RegistroAccionEntity> getOne();
+
     @Query("SELECT * FROM registro_accion_entity LIMIT 100")
     List<RegistroAccionEntity> getAllBatch();
 

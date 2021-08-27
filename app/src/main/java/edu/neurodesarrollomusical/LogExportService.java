@@ -15,16 +15,22 @@ public class LogExportService extends Service {
         @Override
         public void run() {
             try {
-                ConnectivityManager cm = (ConnectivityManager) getSystemService(getApplicationContext().CONNECTIVITY_SERVICE);
+                getApplicationContext();
+                ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
                 boolean isConnected = cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
 
                 if (isConnected) {
                     RegistroAccionesController.getInstance().enviarLog(getApplicationContext());
+                    handler.postDelayed(this, 3600000); // 60 minutos
+                } else {
+                    if (RegistroAccionesController.getInstance().hayLog(getApplicationContext())) {
+                        handler.postDelayed(this, 600000); // 10 minutos
+                    }
                 }
             } catch (Exception ex) {
+                handler.postDelayed(this, 1800000); // 30 minutos
                 Log.e(this.getClass().toString(), ex.getMessage());
             }
-            handler.postDelayed(this, 15000);
         }
     };
 

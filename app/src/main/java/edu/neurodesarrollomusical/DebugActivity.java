@@ -36,8 +36,13 @@ public class DebugActivity extends AppCompatActivity {
         sendLogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RegistroAccionesController.getInstance().enviarLog(getApplicationContext());
-                MensajesHelper.showText(getApplicationContext(), "Listo!");
+                try {
+                    RegistroAccionesController.getInstance().enviarLog(getApplicationContext());
+                    MensajesHelper.showText(getApplicationContext(), "Listo!");
+                } catch (IOException e) {
+                    MensajesHelper.showText(getApplicationContext(), e.getMessage());
+                }
+
             }
         });
     }

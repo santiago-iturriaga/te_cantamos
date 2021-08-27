@@ -25,6 +25,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import org.json.*;
 
 public class RegistroAccionesController {
     private static RegistroAccionesController _instance;
@@ -52,11 +53,15 @@ public class RegistroAccionesController {
                 new RegistroAccionEntity(new Date().getTime(), cancionTitulo, cancionNumero, false, true));
     }
 
+    public List<RegistroAccionEntity> obtenerOneRegistro(Context context) {
+        return AppDatabaseController.getInstance(context).getDB().registroAccionDAO().getOne();
+    }
+
     public List<RegistroAccionEntity> obtenerBatchRegistro(Context context) {
         return AppDatabaseController.getInstance(context).getDB().registroAccionDAO().getAllBatch();
     }
 
-    void postJson(Context context, List<RegistroAccionEntity> reg, String url, String json) {
+    boolean postJson(Context context, List<RegistroAccionEntity> reg, String url, String json) throws IOException {
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder()
                 .url(url)
@@ -77,15 +82,31 @@ public class RegistroAccionesController {
                     // String responseStr = response.body().string();
                     // Do what you want to do with the response.
                     Log.i(this.getClass().toString(), response.message());
+                    String json = response.body().string();
 
+                    JSONObject obj = null;
                     try {
-                        List<Long> ids = new ArrayList<Long>();
-                        for (int i = 0; i < reg.size(); i++) {
-                            ids.add(Long.valueOf(reg.get(i).id));
+                        obj = new JSONObject(json);
+                        boolean success = obj.getBoolean("success");
+                        boolean logout = obj.getBoolean("logout");
+
+                        if (success) {
+                            try {
+                                List<Long> ids = new ArrayList<Long>();
+                                for (int i = 0; i < reg.size(); i++) {
+                                    ids.add(Long.valueOf(reg.get(i).id));
+                                }
+                                AppDatabaseController.getInstance(context).getDB().registroAccionDAO().deleteItemByIds(ids);
+                            } catch (Exception ex) {
+                                Log.e(this.getClass().toString(), ex.getMessage());
+                            }
+
+                            if (logout) {
+                                SeguridadController.getInstance().logout(context);
+                            }
                         }
-                        AppDatabaseController.getInstance(context).getDB().registroAccionDAO().deleteItemByIds(ids);
-                    } catch (Exception ex) {
-                        Log.e(this.getClass().toString(), ex.getMessage());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 } else {
                     // Request not successful
@@ -93,6 +114,7 @@ public class RegistroAccionesController {
                 }
             }
         });
+        return true;
     }
 
     String buildJson(Context context, List<RegistroAccionEntity> reg) {
@@ -123,12 +145,17 @@ public class RegistroAccionesController {
         return texto.toString();
     }
 
-    public void enviarLog(Context context) {
+    public boolean hayLog(Context context) {
+        return (obtenerOneRegistro(context).size() > 0);
+    }
+
+    public boolean enviarLog(Context context) throws IOException {
         List<RegistroAccionEntity> reg = obtenerBatchRegistro(context);
         if (reg.size() > 0) {
             String json = buildJson(context, reg);
-            postJson(context, reg, context.getResources().getString(R.string.server_IP), json);
-        }
+            return postJson(context, reg, context.getResources().getString(R.string.server_IP), json);
+        } else
+            return true;
     }
 }
 

@@ -6,6 +6,8 @@ import android.content.Intent;
 import org.jetbrains.annotations.NotNull;
 
 import edu.neurodesarrollomusical.LoginActivity;
+import edu.neurodesarrollomusical.R;
+
 import android.provider.Settings.Secure;
 
 public class SeguridadController {
@@ -30,8 +32,7 @@ public class SeguridadController {
     }
 
     public boolean login(Context context, String usuario, String contrasenia) {
-        //if (usuario.equals("pepe") && contrasenia.equals("coco")) {
-        if (contrasenia.equals("coco")) {
+        if (contrasenia.equals(context.getResources().getString(R.string.app_password))) {
             ConfigController.getInstance().setAutenticado(context, usuario);
             return true;
         } else {
