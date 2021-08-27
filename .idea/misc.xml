@@ -3,7 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_button.xml" value="0.26796875" />
+        <entry key="app/src/main/res/drawable/bg_letra_cancion.xml" value="0.26796875" />
+        <entry key="app/src/main/res/drawable/ic_app.xml" value="0.162109375" />
+        <entry key="app/src/main/res/drawable/ic_cancion_no_favorita.xml" value="0.162109375" />
+        <entry key="app/src/main/res/drawable/ic_noun_baby_3635433.xml" value="0.162109375" />
+        <entry key="app/src/main/res/drawable/ic_noun_newborn_baby.xml" value="0.26796875" />
+        <entry key="app/src/main/res/drawable/ic_noun_newborn_baby_icon.xml" value="0.162109375" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12528691660290742" />
+        <entry key="app/src/main/res/layout/activity_player.xml" value="0.12528691660290742" />
       </map>
     </option>
   </component>

@@ -33,7 +33,7 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
                 android:textSize="30dp"
-                android:text="pepe" />
+                android:text="" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Space android:layout_width="match_parent"
@@ -44,7 +44,6 @@
             android:layout_height="wrap_content"
             android:textColorHint="@color/black"
             android:hint="Contraseña"
-            app:passwordToggleTint="@color/white"
             app:passwordToggleEnabled="true"
             android:scrollbarSize="25dp">
 
@@ -55,7 +54,7 @@
                 android:textSize="30dp"
                 android:textColor="@color/black"
                 android:inputType="textPassword"
-                android:text="coco" />
+                android:text="" />
             </com.google.android.material.textfield.TextInputLayout>
 
         <Space android:layout_width="match_parent"

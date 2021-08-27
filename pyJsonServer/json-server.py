@@ -6,7 +6,7 @@ import sqlite3
 import sys
 
 DEBUG = 0
-LOGOUT_CLIENTS = True
+LOGOUT_CLIENTS = False
 
 con = None
 
