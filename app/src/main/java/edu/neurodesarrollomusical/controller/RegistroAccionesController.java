@@ -8,6 +8,8 @@ import android.widget.TextView;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -27,20 +29,66 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import org.json.*;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
 public class RegistroAccionesController {
     private static RegistroAccionesController _instance;
 
     public synchronized static RegistroAccionesController getInstance() {
         if (_instance == null) {
             _instance = new RegistroAccionesController();
+            _instance.init();
         }
         return _instance;
     }
 
-    OkHttpClient client = new OkHttpClient();
+    OkHttpClient client = null;
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
     private RegistroAccionesController() {
+    }
+
+    private void init() {
+        TrustManager TRUST_ALL_CERTS = new X509TrustManager() {
+            @Override
+            public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) {
+            }
+
+            @Override
+            public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) {
+            }
+
+            @Override
+            public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+                return new java.security.cert.X509Certificate[] {};
+            }
+        };
+
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+
+        try {
+            SSLContext sslContext = null;
+            sslContext = SSLContext.getInstance("SSL");
+            sslContext.init(null, new TrustManager[] { TRUST_ALL_CERTS }, new java.security.SecureRandom());
+
+            builder.sslSocketFactory(sslContext.getSocketFactory(), (X509TrustManager) TRUST_ALL_CERTS);
+            builder.hostnameVerifier(new HostnameVerifier() {
+                @Override
+                public boolean verify(String hostname, SSLSession session) {
+                    return true;
+                }
+            });
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (KeyManagementException e) {
+            e.printStackTrace();
+        }
+
+        client = builder.build();
     }
 
     public void crearRegistroInicioCancion(Context context, String cancionTitulo, int cancionNumero) {
@@ -67,6 +115,7 @@ public class RegistroAccionesController {
                 .url(url)
                 .post(body)
                 .build();
+
         Call call = client.newCall(request);
         call.enqueue(new Callback() {
             @Override

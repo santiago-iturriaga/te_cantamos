@@ -54,4 +54,18 @@ public class ConfigController {
         myEdit.remove(context.getResources().getString(R.string.configFile_usuarioKey));
         myEdit.commit();
     }
+
+    public boolean getKaraoke(Context context) {
+        if (getSharedPreferences(context).contains(context.getResources().getString(R.string.configFile_karaokeKey)))
+        {
+            return getSharedPreferences(context).getBoolean(context.getResources().getString(R.string.configFile_karaokeKey), false);
+        } else
+            return false;
+    }
+
+    public void setKaraoke(Context context, boolean value) {
+        SharedPreferences.Editor myEdit = getSharedPreferences(context).edit();
+        myEdit.putBoolean(context.getResources().getString(R.string.configFile_karaokeKey), value);
+        myEdit.commit();
+    }
 }

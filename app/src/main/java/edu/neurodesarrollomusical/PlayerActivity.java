@@ -15,6 +15,7 @@ import java.util.Date;
 
 import edu.neurodesarrollomusical.controller.AppDatabaseController;
 import edu.neurodesarrollomusical.controller.CancionesController;
+import edu.neurodesarrollomusical.controller.ConfigController;
 import edu.neurodesarrollomusical.controller.RegistroAccionesController;
 import edu.neurodesarrollomusical.controller.SeguridadController;
 import edu.neurodesarrollomusical.db.RegistroAccionEntity;
@@ -265,7 +266,12 @@ public class PlayerActivity extends AppCompatActivity {
                     textViewLetra.setText(c.letra);
                     setFavorito(imageViewFav, c.getEsFavorita());
 
-                    player = MediaPlayer.create(PlayerActivity.this, c.resourceId);
+                    if (!ConfigController.getInstance().getKaraoke(getApplicationContext())) {
+                        player = MediaPlayer.create(PlayerActivity.this, c.resourceId);
+                    } else {
+                        player = MediaPlayer.create(PlayerActivity.this, c.resourceIdKaraoke);
+                    }
+
                     player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
                         public void onCompletion(MediaPlayer mp) {

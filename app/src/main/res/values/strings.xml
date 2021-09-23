@@ -8,4 +8,5 @@
     <string name="configFile">appConfigFile</string>
     <string name="configFile_autenticadoKey">autenticado</string>
     <string name="configFile_usuarioKey">usuario</string>
+    <string name="configFile_karaokeKey">karaoke</string>
 </resources>

@@ -27,16 +27,18 @@ public class CancionesController {
         public final String interprete;
         public final String letra;
         public final int resourceId;
+        public final int resourceIdKaraoke;
         public CancionEntity entity;
 
         public Cancion(int id, String titulo, String autor, String interprete,
-                       String letra, int resourceId) {
+                       String letra, int resourceId, int resourceIdKaraoke) {
             this.id = id;
             this.titulo = titulo;
             this.autor = autor;
             this.interprete = interprete;
             this.letra = letra;
             this.resourceId = resourceId;
+            this.resourceIdKaraoke = resourceIdKaraoke;
             this.entity = null;
         }
 
@@ -82,12 +84,13 @@ public class CancionesController {
             int autorStringId = resources.getIdentifier("cancion" + id + "_autor", "string", packageName);
             int interpreteStringId = resources.getIdentifier("cancion" + id + "_interprete", "string", packageName);
             int letraStringId = resources.getIdentifier("cancion" + id + "_letra", "string", packageName);
-            int mp3RawId = resources.getIdentifier("m" + id, "raw", packageName);
+            int mp3RawId = resources.getIdentifier("c" + id, "raw", packageName);
+            int mp3RawIdKaraoke = resources.getIdentifier("c" + id + "k", "raw", packageName);
 
             if (tituloStringId != 0 && letraStringId != 0 && mp3RawId != 0) {
                 c = new Cancion(id, resources.getString(tituloStringId), resources.getString(autorStringId),
                         resources.getString(interpreteStringId),
-                        resources.getString(letraStringId), mp3RawId);
+                        resources.getString(letraStringId), mp3RawId, mp3RawIdKaraoke);
 
                 for (int j = 0; j < cancionesDB.size() && c.entity==null; j++) {
                     if (cancionesDB.get(j).id == c.id) {

@@ -7,10 +7,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import java.util.Random;
 
 import edu.neurodesarrollomusical.controller.CancionesController;
+import edu.neurodesarrollomusical.controller.ConfigController;
 import edu.neurodesarrollomusical.controller.SeguridadController;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         startService(new Intent( this, LogExportService.class));
+
+        Switch switchKaraoke = findViewById(R.id.mainSwitchKaraoke);
+        switchKaraoke.setChecked(ConfigController.getInstance().getKaraoke(getApplicationContext()));
+        switchKaraoke.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                ConfigController.getInstance().setKaraoke(getApplicationContext(), isChecked);
+            }
+        });
 
         Button buttonDebug = findViewById(R.id.mainButtonDebug);
         buttonDebug.setOnClickListener(new View.OnClickListener() {

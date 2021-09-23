@@ -4,6 +4,7 @@ import json
 import time
 import sqlite3
 import sys
+import ssl
 
 DEBUG = 0
 LOGOUT_CLIENTS = False
@@ -84,7 +85,10 @@ def run(port=8008, db='app.db'):
     print('Starting httpd on port {0}...'.format(port))
     server_address = ('', port)
     httpd = HTTPServer(server_address, _RequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket, certfile='cert.pem', keyfile='key.pem', server_side=True)
     httpd.serve_forever()
+
+	#httpd = HTTPServer(('localhost', 1443), SimpleHTTPRequestHandler)
 
 if __name__ == "__main__":
     from sys import argv
