@@ -9,7 +9,7 @@ import mariadb
 import sys
 import ssl
 
-DEBUG = 1
+DEBUG = 0
 LOGOUT_CLIENTS = False
 
 con = None
@@ -37,8 +37,6 @@ class _RequestHandler(BaseHTTPRequestHandler):
             print(raw)
             print(message)
 
-        full_sql_insert = ""
-
         try:
             if not message['ps'] == 'lola':
                 print('[ERROR] password incorrecta: {0}'.format(message['ps']), file=sys.stderr)
@@ -48,32 +46,36 @@ class _RequestHandler(BaseHTTPRequestHandler):
             else:
                 print('[INFO] password OK', file=sys.stderr)
 
-            for item in message['log']:
-                fechaAccion = item['fechaAccion']
-                nombreCancion = item['nombreCancion']
-                numeroCancion = item['numeroCancion']
-                accionInicio = item['accionInicio']
-                accionFin = item['accionFin']
-                
-                sql_insert = "INSERT INTO log VALUES ('{0}',{1},'{2}',{3},{4},{5},null);".format(message['usuario'],fechaAccion,nombreCancion,numeroCancion,accionInicio,accionFin)
-                
-                if DEBUG:
-                    print(sql_insert)
+            cur = con.cursor()
+            try:               
+                for item in message['log']:
+                    fechaAccion = item['fechaAccion']
+                    nombreCancion = item['nombreCancion']
+                    numeroCancion = item['numeroCancion']
+                    accionInicio = item['accionInicio']
+                    accionFin = item['accionFin']
                     
-                full_sql_insert = full_sql_insert + sql_insert
+                    sql_insert = "INSERT INTO log VALUES ('{0}',{1},'{2}',{3},{4},{5},null);".format(message['usuario'],fechaAccion,nombreCancion,numeroCancion,accionInicio,accionFin)
+                    
+                    if DEBUG:
+                        print(sql_insert)
 
-            try:
-                cur = con.cursor()
-                cur.execute(full_sql_insert)
+                    cur.execute(sql_insert)
+
                 cur.close()
-
+                con.commit()
                 self._set_headers()
                 self.wfile.write(json.dumps({'success': True, 'logout': LOGOUT_CLIENTS}).encode('utf-8'))
             except:
                 print('[ERROR] inserting DB: {0} <{1}>'.format(sys.exc_info()[1],sys.exc_info()[0]), file=sys.stderr)
-
+                cur.close()
+                con.rollback()
+                self._set_headers()
+                self.wfile.write(json.dumps({'success': False, 'logout': LOGOUT_CLIENTS}).encode('utf-8'))
         except:
             print('[ERROR] parsing JSON: {0} <{1}>'.format(sys.exc_info()[1],sys.exc_info()[0]), file=sys.stderr)
+            self._set_headers()
+            self.wfile.write(json.dumps({'success': False, 'logout': LOGOUT_CLIENTS}).encode('utf-8'))                            
 
     def do_OPTIONS(self):
         # Send allow-origin header for preflight POST XHRs.
@@ -108,6 +110,7 @@ def run(port=8008):
             database="mama_te_canta"
 
         )
+        con.autocommit = False
     except mariadb.Error:
         print('[ERROR] conectandose a mariadb: {0} <{1}>'.format(sys.exc_info()[1],sys.exc_info()[0]), file=sys.stderr)
         sys.exit(1)
