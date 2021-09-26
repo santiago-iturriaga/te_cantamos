@@ -179,6 +179,8 @@ public class RegistroAccionesController {
         StringBuilder texto = new StringBuilder();
         texto.append("{\n\"usuario\": \"");
         texto.append(usuario);
+        texto.append("\", \n\"ps\": \"");
+        texto.append(context.getResources().getString(R.string.app_password));
         texto.append("\"");
         if (reg.size() > 0) {
             texto.append(",\n");
