@@ -81,11 +81,6 @@
             android:layout_width="24sp"
             android:layout_height="24sp"
             android:src="@drawable/ic_play_progreso"/>
-        <ImageView
-            android:id="@+id/playerLayoutProgreso5"
-            android:layout_width="24sp"
-            android:layout_height="24sp"
-            android:src="@drawable/ic_play_progreso"/>
     </LinearLayout>
 
     <TextView

@@ -48,7 +48,6 @@
             android:background="@drawable/bg_button"
             android:drawableLeft="@drawable/ic_lista_canciones"
             android:hint="Lista de canciones"
-            android:textColorHint="#fff"
             android:textSize="20sp"
             android:textStyle="bold"></Button>
 
@@ -63,7 +62,6 @@
             android:background="@drawable/bg_button"
             android:drawableLeft="@drawable/ic_play_aleatorio"
             android:hint="Escuchar aleatorio"
-            android:textColorHint="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"></Button>
 
@@ -78,7 +76,6 @@
             android:background="@drawable/bg_button"
             android:drawableLeft="@drawable/ic_play_favoritos"
             android:hint="Escuchar favoritas"
-            android:textColorHint="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"></Button>
 
@@ -93,7 +90,6 @@
             android:background="@drawable/bg_button"
             android:drawableLeft="@drawable/ic_play_solo_una"
             android:hint="Escuchar solo una"
-            android:textColorHint="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"></Button>
 
@@ -108,7 +104,6 @@
             android:background="@drawable/bg_button"
             android:drawableLeft="@drawable/ic_play_elegidas"
             android:hint="Escuchar selección"
-            android:textColorHint="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"></Button>
 
@@ -123,7 +118,6 @@
             android:background="@drawable/bg_button"
             android:drawableLeft="@drawable/ic_ayuda"
             android:hint="Ayuda"
-            android:textColorHint="#fff"
             android:textSize="20sp"
             android:textStyle="bold" />
 

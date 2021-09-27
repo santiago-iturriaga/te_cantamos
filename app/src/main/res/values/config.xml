@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="intervencion_max_canciones">5</integer>
+    <integer name="intervencion_max_canciones">4</integer>
     <string name="server_IP">https://ituland.ddns.net:8008/app</string>
     <string name="app_password">lola</string>
 </resources>

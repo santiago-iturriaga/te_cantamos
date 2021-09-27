@@ -198,13 +198,11 @@ public class PlayerActivity extends AppCompatActivity {
         ImageView p2 = findViewById(R.id.playerLayoutProgreso2);
         ImageView p3 = findViewById(R.id.playerLayoutProgreso3);
         ImageView p4 = findViewById(R.id.playerLayoutProgreso4);
-        ImageView p5 = findViewById(R.id.playerLayoutProgreso5);
 
         setImagenProgreso(p1,0);
         setImagenProgreso(p2,1);
         setImagenProgreso(p3,2);
         setImagenProgreso(p4,3);
-        setImagenProgreso(p5,4);
     }
 
     public void setFavorito(ImageView fav, boolean estado) {
