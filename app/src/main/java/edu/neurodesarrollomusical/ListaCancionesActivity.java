@@ -118,11 +118,11 @@ public class ListaCancionesActivity extends ListActivity {
 
                 break;
             case LISTAR_CANCIONES:
-                int[] elegidas = {canciones[position].id};
+                /*int[] elegidas = {canciones[position].id};
                 Intent i = new Intent(ListaCancionesActivity.this, PlayerActivity.class);
                 i.putExtra(PlayerActivity.EXTRA_MODO, PlayerActivity.MODO.SOLO_LETRA.ordinal());
-                i.putExtra(PlayerActivity.EXTRA_CANCIONES, elegidas);
-                startActivity(i);
+                i.putExtra(PlayerActivity.EXTRA_CANCIONES, elegidas);*/
+                //startActivity(i);
                 break;
         }
     }

@@ -154,13 +154,13 @@ public class PlayerActivity extends AppCompatActivity {
                         textViewAutor.setVisibility(View.VISIBLE);
                         textViewAutor.setText(c.autor);
                     } else {
-                        textViewAutor.setVisibility(View.INVISIBLE);
+                        textViewAutor.setVisibility(View.GONE);
                     }
                     if (c.interprete.trim().length() > 0 && !c.interprete.trim().equals(c.autor.trim())) {
                         textViewInterprete.setVisibility(View.VISIBLE);
                         textViewInterprete.setText(c.interprete);
                     } else {
-                        textViewInterprete.setVisibility(View.INVISIBLE);
+                        textViewInterprete.setVisibility(View.GONE);
                     }
                     textViewLetra.setText(c.letra);
                     setFavorito(imageViewFav, c.getEsFavorita());

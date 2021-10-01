@@ -1,11 +1,13 @@
 package edu.neurodesarrollomusical;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -60,6 +62,7 @@ public class ListaCancionesAdapter extends ArrayAdapter<CancionesController.Canc
 
         ImageView imageViewFav = (ImageView) rowView.findViewById(R.id.listaCancionesRowFavorita);
         ImageView imageViewSel = (ImageView) rowView.findViewById(R.id.listaCancionesRowSeleccionado);
+        RelativeLayout itemRow = (RelativeLayout) rowView.findViewById(R.id.listaCancionesItem);
 
         if (modo == ListaCancionesActivity.MODO.ELEGIR_CANCIONES_PARA_INTERVENCION) {
             imageViewFav.setVisibility(View.INVISIBLE);
@@ -89,6 +92,30 @@ public class ListaCancionesAdapter extends ArrayAdapter<CancionesController.Canc
             imageViewFav.setVisibility(View.VISIBLE);
             imageViewSel.setVisibility(View.INVISIBLE);
             setFavorito(imageViewFav, canciones[position].getEsFavorita());
+
+            if (modo == ListaCancionesActivity.MODO.LISTAR_CANCIONES) {
+                imageViewFav.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        CancionesController.Cancion c = (CancionesController.Cancion) ((RelativeLayout)v.getParent()).getTag();
+                        c.setEsFavorita(context, !c.getEsFavorita());
+
+                        ImageView click_sel = (ImageView) v.findViewById(R.id.listaCancionesRowFavorita);
+                        setFavorito(click_sel, c.getEsFavorita());
+                    }
+                });
+                itemRow.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        CancionesController.Cancion c = (CancionesController.Cancion) ((RelativeLayout)v.getParent()).getTag();
+                        int[] elegidas = {canciones[position].id};
+                        Intent i = new Intent(context, PlayerActivity.class);
+                        i.putExtra(PlayerActivity.EXTRA_MODO, PlayerActivity.MODO.SOLO_LETRA.ordinal());
+                        i.putExtra(PlayerActivity.EXTRA_CANCIONES, elegidas);
+                        context.startActivity(i);
+                    }
+                });
+            }
         }
 
         return rowView;
@@ -105,11 +132,11 @@ public class ListaCancionesAdapter extends ArrayAdapter<CancionesController.Canc
 
     public void setFavorito(ImageView fav, boolean estado) {
         if (estado) {
-            fav.setVisibility(View.VISIBLE);
+            //fav.setVisibility(View.VISIBLE);
             fav.setImageResource(R.drawable.ic_cancion_favorita);
         } else {
             fav.setImageResource(R.drawable.ic_cancion_no_favorita);
-            fav.setVisibility(View.INVISIBLE);
+            //fav.setVisibility(View.INVISIBLE);
         }
     }
 
