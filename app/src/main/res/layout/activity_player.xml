@@ -50,8 +50,8 @@
             android:layout_height="match_parent"
             android:lineSpacingMultiplier="1.2"
             android:padding="10sp"
-            android:text="Player"
-            android:textSize="20dp" />
+            android:text="Letra..."
+            android:textSize="25dp" />
     </ScrollView>
 
     <LinearLayout

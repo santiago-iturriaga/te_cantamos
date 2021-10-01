@@ -55,58 +55,67 @@ de mi corazón"</string>
     <string name="cancion12_letra">"Arroz con leche
 yo quiero jugar
 con unos amiguitos
-de San Nicolás.
+de San Nicolás
 
 Que quieran correr,
 que quieran saltar,
 que abran la puerta
-para ir a jugar.
+para ir a jugar
 
 Con estos sí,
 con estos no,
 con estos amiguitos
-disfruto yo."</string>
+disfruto yo"</string>
 
     <string name="cancion13_titulo">Canción para bañar la luna</string>
     <string name="cancion13_autor"></string>
     <string name="cancion13_interprete"></string>
     <string name="cancion13_letra">"Ya la luna baja en camisón,
-a bañarse en un charquito con jabón.
+a bañarse en un charquito con jabón
 
 Ya la luna baja en tobogán,
-revoleando su sombrilla de azafrán.
+revoleando su sombrilla de azafrán
 
 Quien la pesque con una cañita de bambú,
-se la lleva a Siu Kiu."</string>
+se la lleva a Siu Kiu"</string>
 
     <string name="cancion14_titulo">Caracol col col</string>
     <string name="cancion14_autor"></string>
     <string name="cancion14_interprete"></string>
     <string name="cancion14_letra">"Caracol, col, col
 Saca tus cuernos al sol
-Que tu padre y tu madre
-ya los sacaron."</string>
+Que te vienen a buscar
+A la orilla de la mar
+
+Caracol, col, col
+Saca tus cuernos al sol
+Que tu madre y tu padre ya los sacaron
+
+Caracol, col, col
+Saca tus cuernos al sol
+Que te vienen a buscar
+A la orilla de la mar"</string>
 
     <string name="cancion15_titulo">Cucú, cucú, cantaba la rana</string>
     <string name="cancion15_autor"></string>
     <string name="cancion15_interprete"></string>
-    <string name="cancion15_letra">"Cucú, cucú, cantaba la rana.
-Cucú, cucú, debajo del agua.
+    <string name="cancion15_letra">"Cucú, cucú, cantaba la rana
+Cucú, cucú, debajo del agua
 
-Cucú, cucú, pasó un caballero.
-Cucú, cucú, con capa y sombrero.
+Cucú, cucú, pasó un caballero
+Cucú, cucú, con capa y sombrero
 
-Cucú, cucú, pasó una señora.
-Cucú, cucú, con traje de cola.
+Cucú, cucú, pasó una señora
+Cucú, cucú, con traje de cola
 
-Cucú, cucú, pasó un marinero.
-Cucú, cucú, vendiendo romero.
+Cucú, cucú, pasó un marinero
+Cucú, cucú, vendiendo romero
 
-Cucú, cucú, le pidió un ramito.
-Cucú, cucú, no le quiso dar.
+Cucú, cucú, le pidió un ramito
+Cucú, cucú, no le quiso dar
 
 Cucú, cucú, se puso muy triste
-Cucú, cucú y se echó a llorar."</string>
+Cucú, cucú y se echó a llorar"</string>
 
     <string name="cancion16_titulo">¿Estrellita dónde estás?</string>
     <string name="cancion16_autor"></string>
@@ -114,18 +123,18 @@ Cucú, cucú y se echó a llorar."</string>
     <string name="cancion16_letra">"Estrellita dónde estás?
 me pregunto qué serás,
 en el cielo y en el mar
-un diamante de verdad.
+un diamante de verdad
 
 Estrellita dónde estás?
-me pregunto qué serás.
+me pregunto qué serás
 
 Cuando el sol se ha ido ya
 cuando nada brilla más
 tu nos nuestras tu brillar
-brillas, brillas sin parar.
+brillas, brillas sin parar
 
 Estrellita, dónde estás?
-me pregunto qué serás."</string>
+me pregunto qué serás"</string>
 
     <string name="cancion17_titulo">Fray Santiago</string>
     <string name="cancion17_autor"></string>
@@ -134,7 +143,7 @@ me pregunto qué serás."</string>
 ¿duerme usted? ¿duerme usted?
 Suenan las campanas, suenan las campanas
 din, don, dan,
-din, don, dan."</string>
+din, don, dan"</string>
 
     <string name="cancion18_titulo">Que llueva, que llueva</string>
     <string name="cancion18_autor"></string>
@@ -142,20 +151,21 @@ din, don, dan."</string>
     <string name="cancion18_letra">"Que llueva, que llueva
 la vieja esta en la cueva,
 los pajaritos cantan,
-la vieja se levanta.
+la vieja se levanta
+
 Que sí, que no,
 que caiga un chaparrón,
 arriba del colchón,
-con agua y jabón."</string>
+con agua y jabón"</string>
 
     <string name="cancion19_titulo">Saco una manito</string>
     <string name="cancion19_autor"></string>
     <string name="cancion19_interprete"></string>
     <string name="cancion19_letra">"Saco una manita la hago bailar,
-la cierro, la abro y la vuelvo a guardar.
+la cierro, la abro y la vuelvo a guardar
 Saco otra manita la hago bailar,
-la cierro, la abro y la vuelvo a guardar.
+la cierro, la abro y la vuelvo a guardar
 Saco las dos manitas las hago bailar,
-las cierro, las abro y las vuelvo a guardar."</string>
+las cierro, las abro y las vuelvo a guardar"</string>
 
 </resources>
