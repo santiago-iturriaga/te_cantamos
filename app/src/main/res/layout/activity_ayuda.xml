@@ -8,7 +8,11 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@id/ayudaImageViewPlayPauseControl"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="outsideInset"
+        android:verticalScrollbarPosition="right">
 
         <TextView
             android:id="@+id/ayudaTextView"
@@ -19,6 +23,37 @@
             android:layout_gravity="fill"
             android:justificationMode="inter_word"
             android:typeface="normal"
-            android:padding="10dp"/>
+            android:padding="10dp" />
     </ScrollView>
+
+    <TextView
+        android:id="@+id/ayudaTextViewTiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/ayudaImageViewPlayPauseControl"
+        android:layout_marginBottom="15dp"
+        android:text="01:00"
+        android:textSize="20sp"
+        android:layout_marginRight="5sp"/>
+
+    <ImageButton
+        android:id="@+id/ayudaImageViewPlayPauseControl"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="1sp"
+        android:layout_marginRight="20sp"
+        android:background="@drawable/ic_play_control" />
+
+    <ImageButton
+        android:id="@+id/ayudaImageViewPrevControl"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/ayudaImageViewPlayPauseControl"
+        android:background="@drawable/ic_play_restart" />
 </RelativeLayout>
