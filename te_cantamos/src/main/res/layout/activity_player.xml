@@ -24,7 +24,8 @@
         android:layout_marginBottom="0sp"
         android:text="...Autor..."
         android:textSize="14dp"
-        android:textStyle="italic"/>
+        android:textStyle="italic"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/playerTextViewInterprete"
@@ -34,7 +35,8 @@
         android:layout_centerHorizontal="true"
         android:text="...Interprete..."
         android:textSize="14dp"
-        android:textStyle="italic"/>
+        android:textStyle="italic"
+        android:visibility="gone" />
 
     <ScrollView
         android:id="@+id/playerScrollLetra"
