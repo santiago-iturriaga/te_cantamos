@@ -2,5 +2,5 @@
 <resources>
     <integer name="intervencion_max_canciones">4</integer>
     <string name="server_IP">https://ituland.ddns.net:8008/app</string>
-    <string name="app_password">lola</string>
+    <string name="app_password">musica</string>
 </resources>

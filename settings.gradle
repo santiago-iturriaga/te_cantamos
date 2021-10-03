@@ -1,2 +1,2 @@
-include ':app'
+include ':te_cantamos'
 rootProject.name = "NeuroDesarrolloMusical"

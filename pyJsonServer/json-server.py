@@ -11,6 +11,7 @@ import ssl
 
 DEBUG = 0
 LOGOUT_CLIENTS = False
+PASSWORD = 'musica'
 
 con = None
 
@@ -38,7 +39,7 @@ class _RequestHandler(BaseHTTPRequestHandler):
             print(message)
 
         try:
-            if not message['ps'] == 'lola':
+            if not message['ps'] == PASSWORD:
                 print('[ERROR] password incorrecta: {0}'.format(message['ps']), file=sys.stderr)
                 self._set_headers()
                 self.wfile.write(json.dumps({'success': False, 'logout': LOGOUT_CLIENTS}).encode('utf-8'))
