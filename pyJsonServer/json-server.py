@@ -102,11 +102,11 @@ class _RequestHandler(BaseHTTPRequestHandler):
         self.send_header('Access-Control-Allow-Headers', 'content-type')
         self.end_headers()
 
-def run(port=8008):
+def run(path='.'):
     print('Starting httpd on port {0}...'.format(port))
     server_address = ('', port)
     httpd = HTTPServer(server_address, _RequestHandler)
-    httpd.socket = ssl.wrap_socket(httpd.socket, certfile='cert.pem', keyfile='key.pem', server_side=True)
+    httpd.socket = ssl.wrap_socket(httpd.socket, certfile='{0}/cert.pem'.format(path), keyfile='{0}/key.pem'.format(path), server_side=True)
     httpd.serve_forever()
 
     #httpd = HTTPServer(('localhost', 1443), SimpleHTTPRequestHandler)
@@ -115,6 +115,6 @@ if __name__ == "__main__":
     from sys import argv
 
     if len(argv) == 2:
-        run(port=int(argv[1]))
+        run(path=int(argv[1]))
     else:
         run()

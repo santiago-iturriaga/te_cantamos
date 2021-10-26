@@ -9,5 +9,5 @@ LOG_PATH=/archivos/mama_te_canta
 #export PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/usr/local/bin
 #umask 022
 cd /
-nohup setsid $0 $EXEC_PATH/json-server.py 2>$LOG_PATH/json-server.err >$LOG_PATH/json-server.out &
+nohup setsid $EXEC_PATH/json-server.py /archivos/mama_te_canta/neurodesarrollomusical/pyJsonServer 2>$LOG_PATH/json-server.err >$LOG_PATH/json-server.out &
 echo "$!" > /tmp/json-server.pid
