@@ -4,14 +4,22 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from http import HTTPStatus
 import json
 import time
-#import sqlite3
 import mariadb
 import sys
 import ssl
+import datetime
 
+PORT=8008
 DEBUG = 0
 LOGOUT_CLIENTS = False
 PASSWORD = 'musica'
+
+def print_log(message, is_error=False):
+    time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    if is_error:
+        print('[{0}] <INFO> {1}'.format(time,message), flush=True)
+    else:
+        print('[{0}] <ERROR> {1}'.format(time,message), file=sys.stderr, flush=True)
 
 class _RequestHandler(BaseHTTPRequestHandler):
     def _set_headers(self):
@@ -38,15 +46,16 @@ class _RequestHandler(BaseHTTPRequestHandler):
 
         try:
             if not message['ps'] == PASSWORD:
-                print('[ERROR] password incorrecta: {0}'.format(message['ps']), file=sys.stderr)
+                print_log('incorrect password: {0}'.format(message['ps']), is_error=True)
                 self._set_headers()
                 self.wfile.write(json.dumps({'success': False, 'logout': LOGOUT_CLIENTS}).encode('utf-8'))
                 return
             else:
-                print('[INFO] password OK', file=sys.stderr)
+                #print_log('password OK')
+                pass
 
             con = None
-            print('Starting mariadb on connection...')
+            #print_log('starting mariadb on connection...')
             try:
                 con = mariadb.connect(
                     user="mama",
@@ -57,8 +66,9 @@ class _RequestHandler(BaseHTTPRequestHandler):
 
                 )
                 con.autocommit = False
+                #print_log('mariadb connected!')
             except mariadb.Error:
-                print('[ERROR] conectandose a mariadb: {0} <{1}>'.format(sys.exc_info()[1],sys.exc_info()[0]), file=sys.stderr)
+                print_log('error connecting to mariadb: {0} <{1}>'.format(sys.exc_info()[1],sys.exc_info()[0]), is_error=True)
                 sys.exit(1)
 
             cur = con.cursor()
@@ -82,7 +92,7 @@ class _RequestHandler(BaseHTTPRequestHandler):
                 self._set_headers()
                 self.wfile.write(json.dumps({'success': True, 'logout': LOGOUT_CLIENTS}).encode('utf-8'))
             except:
-                print('[ERROR] inserting DB: {0} <{1}>'.format(sys.exc_info()[1],sys.exc_info()[0]), file=sys.stderr)
+                print_log('error inserting DB: {0} <{1}>'.format(sys.exc_info()[1],sys.exc_info()[0]), is_error=True)
                 cur.close()
                 con.rollback()
                 self._set_headers()
@@ -90,7 +100,7 @@ class _RequestHandler(BaseHTTPRequestHandler):
 
             con.close()
         except:
-            print('[ERROR] parsing JSON: {0} <{1}>'.format(sys.exc_info()[1],sys.exc_info()[0]), file=sys.stderr)
+            print_log('error parsing JSON: {0} <{1}>'.format(sys.exc_info()[1],sys.exc_info()[0]), is_error=True)
             self._set_headers()
             self.wfile.write(json.dumps({'success': False, 'logout': LOGOUT_CLIENTS}).encode('utf-8'))                            
 
@@ -103,14 +113,12 @@ class _RequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
 def run(path='.'):
-    port=8008
-    print('Starting httpd on port {0}...'.format(port), flush=True)
-    server_address = ('', port)
+    print_log('starting httpd on port {0}...'.format(PORT))
+    server_address = ('', PORT)
     httpd = HTTPServer(server_address, _RequestHandler)
     httpd.socket = ssl.wrap_socket(httpd.socket, certfile='{0}/cert.pem'.format(path), keyfile='{0}/key.pem'.format(path), server_side=True)
     httpd.serve_forever()
-
-    #httpd = HTTPServer(('localhost', 1443), SimpleHTTPRequestHandler)
+    print_log('httpd started!')
 
 if __name__ == "__main__":
     from sys import argv
