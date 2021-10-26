@@ -103,7 +103,8 @@ class _RequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
 def run(path='.'):
-    print('Starting httpd on port {0}...'.format(port))
+    port=8008
+    print('Starting httpd on port {0}...'.format(port), flush=True)
     server_address = ('', port)
     httpd = HTTPServer(server_address, _RequestHandler)
     httpd.socket = ssl.wrap_socket(httpd.socket, certfile='{0}/cert.pem'.format(path), keyfile='{0}/key.pem'.format(path), server_side=True)
@@ -115,6 +116,6 @@ if __name__ == "__main__":
     from sys import argv
 
     if len(argv) == 2:
-        run(path=int(argv[1]))
+        run(path=argv[1])
     else:
         run()
