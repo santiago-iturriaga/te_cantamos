@@ -16,7 +16,7 @@ PASSWORD = 'musica'
 
 def print_log(message, is_error=False):
     time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    if is_error:
+    if not is_error:
         print('[{0}] <INFO> {1}'.format(time,message), flush=True)
     else:
         print('[{0}] <ERROR> {1}'.format(time,message), file=sys.stderr, flush=True)
