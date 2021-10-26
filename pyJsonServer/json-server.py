@@ -52,6 +52,7 @@ class _RequestHandler(BaseHTTPRequestHandler):
                 return
             else:
                 #print_log('password OK')
+                print_log('received log from {0}'.format(message['usuario']))
                 pass
 
             con = None
