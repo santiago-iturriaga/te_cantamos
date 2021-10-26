@@ -118,7 +118,6 @@ def run(path='.'):
     httpd = HTTPServer(server_address, _RequestHandler)
     httpd.socket = ssl.wrap_socket(httpd.socket, certfile='{0}/cert.pem'.format(path), keyfile='{0}/key.pem'.format(path), server_side=True)
     httpd.serve_forever()
-    print_log('httpd started!')
 
 if __name__ == "__main__":
     from sys import argv
