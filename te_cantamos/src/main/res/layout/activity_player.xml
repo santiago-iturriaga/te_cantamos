@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Player"
-        android:textSize="24dp" />
+        android:textSize="24dp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/playerTextViewAutor"

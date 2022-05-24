@@ -8,7 +8,10 @@ import android.widget.TextView;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 
+import java.security.InvalidKeyException;
 import java.security.KeyManagementException;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -29,11 +32,18 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import org.json.*;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+
+/*
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
+*/
 
 public class RegistroAccionesController {
     private static RegistroAccionesController _instance;
@@ -53,6 +63,7 @@ public class RegistroAccionesController {
     }
 
     private void init() {
+        /*
         TrustManager TRUST_ALL_CERTS = new X509TrustManager() {
             @Override
             public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) {
@@ -67,9 +78,9 @@ public class RegistroAccionesController {
                 return new java.security.cert.X509Certificate[] {};
             }
         };
-
+        */
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-
+        /*
         try {
             SSLContext sslContext = null;
             sslContext = SSLContext.getInstance("SSL");
@@ -87,6 +98,7 @@ public class RegistroAccionesController {
         } catch (KeyManagementException e) {
             e.printStackTrace();
         }
+        */
 
         client = builder.build();
     }

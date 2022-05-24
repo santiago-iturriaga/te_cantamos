@@ -11,6 +11,10 @@
         <item>17</item>
         <item>18</item>
         <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
     </integer-array>
 
     <string name="cancion10_titulo">A la rueda rueda</string>
@@ -167,5 +171,119 @@ Saco otra manita la hago bailar,
 la cierro, la abro y la vuelvo a guardar
 Saco las dos manitas las hago bailar,
 las cierro, las abro y las vuelvo a guardar"</string>
+
+    <string name="cancion20_titulo">Mi revolución</string>
+    <string name="cancion20_autor">Cuatro pesos de propina</string>
+    <string name="cancion20_interprete"></string>
+    <string name="cancion20_letra">"Hoy
+La pelea que doy
+Es quererme más
+Hoy
+El grito que doy
+Es silencio
+Hoy
+Te pido perdón
+Si te lastimé el corazón
+Hoy
+No quiero lo que me hace mal
+Lo oscuro del juego
+Hoy que es tiempo de sanar
+Las heridas del tiempo
+Hoy que pronto será ayer
+Regálate el momento
+Esa es mi revolución
+Llenar de amor mi sangre y si reviento
+Que se esparza en el viento
+El amor que llevo dentro
+Hoy
+La pelea que doy
+Es quererme más"</string>
+
+    <string name="cancion21_titulo">Cielo de un sólo color</string>
+    <string name="cancion21_autor">NTVG</string>
+    <string name="cancion21_interprete"></string>
+    <string name="cancion21_letra">"Cuántas lunas que se van
+Y nosotros esperando
+Que despierte el corazón
+Que parece estar quebrado
+
+Todo el tiempo que pasó
+No me aleja de tu lado
+Cielo de un solo color
+Que me sigue enamorando
+
+Hay algo que sigue vivo
+Nos renueva la ilusión
+Y en el último suspiro
+
+El momento ya llegó
+Con los dientes apretados
+Cielo de un solo color
+En el alma está guardado
+
+Vida, que vida pobre
+Vivirla en este lugar
+Qué saben, qué saben ellos
+Que no le pueden cantar
+
+Hay algo que sigue vivo
+Nos renueva la ilusión
+Y en el último suspiro
+
+Ay, celeste regalame un sol
+Ay, celeste regalame un sol
+Ay, celeste regalame un sol"</string>
+
+    <string name="cancion22_titulo">No era cierto</string>
+    <string name="cancion22_autor">NTVG</string>
+    <string name="cancion22_interprete"></string>
+    <string name="cancion22_letra">"Volvé a tu casa cuando quieras
+Siempre te esperan a cenar
+Buscando hacer pasar el tiempo
+Extraño el tono de su voz
+
+Creí que estaba solo y no era cierto
+En este desierto sin velocidad
+No te preocupes
+No vuelvo hasta mañana
+
+A donde siempre me tengo que encontrar
+No queda otra que tirarnos en el pasto
+Sin que nadie nos moleste, no me quiero despertar
+Pensé que estaba solo y no era cierto
+Si tengo con quien quedarme a festejar"</string>
+
+    <string name="cancion23_titulo">Comparsa silenciosa</string>
+    <string name="cancion23_autor">Larbanois y Carrero</string>
+    <string name="cancion23_interprete"></string>
+    <string name="cancion23_letra">"Tocan y tocan el aire
+Y las baldosas se apartan
+Para que pase en silencio
+Por Durazno una llamada
+
+Para que pasen soñando
+Con su cuerda de ilusión
+Los cinco niños morenos
+Y el fantasma de un tambor
+
+Toca que te toca tocando van
+Oyen las maderas aunque no están
+Toca que te toca soñando van
+Cinco morenitos por la ciudad
+
+Tocan y suena en el aire
+De sus manos y su piel
+La cadencia de un Figari
+En silencioso vaivén
+
+Nadie más que ellos escuchan
+Ese imaginario son
+Solo el vuelo de sus manos
+Es anuncio de tambor
+
+Toca que te toca tocando van
+Oyen las maderas aunque no están
+Toca que te toca soñando van
+Cinco morenitos por la ciudad"</string>
 
 </resources>
