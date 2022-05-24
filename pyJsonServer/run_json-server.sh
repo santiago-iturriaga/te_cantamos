@@ -1,13 +1,11 @@
 #!/bin/bash
 
-EXEC_PATH=/archivos/mama_te_canta/neurodesarrollomusical/pyJsonServer
-#EXEC_PATH=/tmp
+EXEC_PATH=~/neurodesarrollomusical/pyJsonServer
 
-LOG_PATH=/archivos/mama_te_canta
-#LOG_PATH=/tmp
+LOG_PATH=~/
 
 #export PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/usr/local/bin
 #umask 022
 cd /
-nohup setsid $EXEC_PATH/json-server.py /archivos/mama_te_canta/neurodesarrollomusical/pyJsonServer 2>$LOG_PATH/json-server.err >$LOG_PATH/json-server.out &
+nohup setsid $EXEC_PATH/json-server.py $EXEC_PATH 2>$LOG_PATH/json-server.err >$LOG_PATH/json-server.out &
 echo "$!" > /tmp/json-server.pid
