@@ -1,14 +1,6 @@
 package edu.neurodesarrollomusical.controller;
 
 import android.content.Context;
-import android.content.Intent;
-
-import org.jetbrains.annotations.NotNull;
-
-import edu.neurodesarrollomusical.LoginActivity;
-import edu.neurodesarrollomusical.R;
-
-import android.provider.Settings.Secure;
 
 public class SeguridadController {
     private static SeguridadController _instance;
@@ -23,32 +15,22 @@ public class SeguridadController {
     private SeguridadController() { }
 
     public boolean checkAutenticado(Context context) {
-        if (!ConfigController.getInstance().getAutenticado(context)) {
-            Intent i = new Intent(context, LoginActivity.class);
-            context.startActivity(i);
-            return false;
-        } else
-            return true;
+        return true;
     }
 
     public boolean login(Context context, String usuario, String contrasenia) {
-        if (contrasenia.equals(context.getResources().getString(R.string.app_password))) {
-            ConfigController.getInstance().setAutenticado(context, usuario);
-            return true;
-        } else {
-            return false;
-        }
+        return true;
     }
 
     public void logout(Context context) {
-        ConfigController.getInstance().unsetAutenticado(context);
+
     }
 
     public boolean getAutenticado(Context context) {
-        return ConfigController.getInstance().getAutenticado(context);
+        return true;
     }
 
     public String getUsuario(Context context) {
-        return ConfigController.getInstance().getUsuario(context);
+        return "";
     }
 }
