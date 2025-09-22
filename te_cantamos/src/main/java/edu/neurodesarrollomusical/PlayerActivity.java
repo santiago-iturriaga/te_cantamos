@@ -11,14 +11,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.Date;
-
-import edu.neurodesarrollomusical.controller.AppDatabaseController;
 import edu.neurodesarrollomusical.controller.CancionesController;
 import edu.neurodesarrollomusical.controller.ConfigController;
-import edu.neurodesarrollomusical.controller.RegistroAccionesController;
-import edu.neurodesarrollomusical.controller.SeguridadController;
-import edu.neurodesarrollomusical.db.RegistroAccionEntity;
 
 public class PlayerActivity extends AppCompatActivity {
     static final public String EXTRA_CANCIONES = "CANCIONES";
@@ -216,7 +210,6 @@ public class PlayerActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (!SeguridadController.getInstance().checkAutenticado(getApplicationContext()));
     }
 
     @Override
@@ -280,7 +273,6 @@ public class PlayerActivity extends AppCompatActivity {
                     textViewTiempo.setText(displayTime(player.getDuration()));
 
                     player.start();
-                    RegistroAccionesController.getInstance().crearRegistroInicioCancion(getApplicationContext(), c.titulo, c.id);
                 }
             }
         }
@@ -310,7 +302,6 @@ public class PlayerActivity extends AppCompatActivity {
             player.release();
 
             CancionesController.Cancion c = CancionesController.getInstance(this.getApplicationContext()).obtenerCancionId(canciones[cancion_actual]);
-            RegistroAccionesController.getInstance().crearRegistroFinCancion(getApplicationContext(), c.titulo, c.id);
         }
     }
 

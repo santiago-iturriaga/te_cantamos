@@ -7,16 +7,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.IOException;
-
-import edu.neurodesarrollomusical.controller.CancionesController;
-import edu.neurodesarrollomusical.controller.ConfigController;
-import edu.neurodesarrollomusical.controller.RegistroAccionesController;
-import edu.neurodesarrollomusical.controller.SeguridadController;
 
 public class AyudaActivity extends AppCompatActivity {
     MediaPlayer player;
@@ -57,7 +50,6 @@ public class AyudaActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (!SeguridadController.getInstance().checkAutenticado(getApplicationContext()));
     }
 
     @Override

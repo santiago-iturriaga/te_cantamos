@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.neurodesarrollomusical.R;
-import edu.neurodesarrollomusical.db.AppDatabase;
 import edu.neurodesarrollomusical.db.CancionEntity;
 
 public class CancionesController {
@@ -71,7 +70,6 @@ public class CancionesController {
 
         _canciones = new ArrayList<Cancion>();
 
-        //NUMERO_CANCIONES = resources.getInteger(R.integer.canciones_cant);
         int[] cancionesIds = resources.getIntArray(R.array.canciones);
         NUMERO_CANCIONES = cancionesIds.length;
 
@@ -133,11 +131,5 @@ public class CancionesController {
             if (_canciones.get(i).id == id) return _canciones.get(i);
         }
         return null;
-
-        /*if (i < _canciones.size()) {
-            return _canciones.get(i);
-        } else {
-            return null;
-        }*/
     }
 }

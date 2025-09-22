@@ -14,7 +14,6 @@ import java.util.Random;
 
 import edu.neurodesarrollomusical.controller.CancionesController;
 import edu.neurodesarrollomusical.controller.ConfigController;
-import edu.neurodesarrollomusical.controller.SeguridadController;
 
 public class MainActivity extends AppCompatActivity {
     static final public String EXTRA_CANCIONES = "CANCIONES";
@@ -29,22 +28,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startService(new Intent( this, LogExportService.class));
-
         Switch switchKaraoke = findViewById(R.id.mainSwitchKaraoke);
         switchKaraoke.setChecked(ConfigController.getInstance().getKaraoke(getApplicationContext()));
         switchKaraoke.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 ConfigController.getInstance().setKaraoke(getApplicationContext(), isChecked);
-            }
-        });
-
-        Button buttonDebug = findViewById(R.id.mainButtonDebug);
-        buttonDebug.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), DebugActivity.class));
             }
         });
 
@@ -169,7 +158,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (!SeguridadController.getInstance().checkAutenticado(getApplicationContext()));
     }
 
     @Override

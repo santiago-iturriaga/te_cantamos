@@ -15,8 +15,6 @@
         android:theme="@style/Theme.NeuroDesarrolloMusical.NoActionBar">
 
         <activity
-            android:name=".DebugActivity" android:exported="true" />
-        <activity
             android:name=".AyudaActivity" android:exported="true" />
         <activity
             android:name=".ListaCancionesActivity" android:exported="true" />

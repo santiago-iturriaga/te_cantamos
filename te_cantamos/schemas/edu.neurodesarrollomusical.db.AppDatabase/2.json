@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "763c87ebb6d98dd7dd06ce2e9cbc9438",
+    "identityHash": "f4377741c820412dce9c09dda5c6297f",
     "entities": [
       {
         "tableName": "cancion_entity",
@@ -41,62 +41,12 @@
         },
         "indices": [],
         "foreignKeys": []
-      },
-      {
-        "tableName": "registro_accion_entity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fecha_accion` INTEGER NOT NULL, `nombre_cancion` TEXT, `numero_cancion` INTEGER NOT NULL, `accion_inicio` INTEGER NOT NULL, `accion_fin` INTEGER NOT NULL)",
-        "fields": [
-          {
-            "fieldPath": "id",
-            "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "fechaAccion",
-            "columnName": "fecha_accion",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "nombreCancion",
-            "columnName": "nombre_cancion",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "numeroCancion",
-            "columnName": "numero_cancion",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "accionInicio",
-            "columnName": "accion_inicio",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "accionFin",
-            "columnName": "accion_fin",
-            "affinity": "INTEGER",
-            "notNull": true
-          }
-        ],
-        "primaryKey": {
-          "columnNames": [
-            "id"
-          ],
-          "autoGenerate": true
-        },
-        "indices": [],
-        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '763c87ebb6d98dd7dd06ce2e9cbc9438')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f4377741c820412dce9c09dda5c6297f')"
     ]
   }
 }

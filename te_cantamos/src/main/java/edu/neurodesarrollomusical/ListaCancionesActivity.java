@@ -10,7 +10,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import edu.neurodesarrollomusical.controller.CancionesController;
-import edu.neurodesarrollomusical.controller.SeguridadController;
 
 public class ListaCancionesActivity extends ListActivity {
     static final public String EXTRA_MODO = "MODO";
@@ -77,7 +76,6 @@ public class ListaCancionesActivity extends ListActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (!SeguridadController.getInstance().checkAutenticado(getApplicationContext())) ;
     }
 
     @Override
@@ -108,7 +106,6 @@ public class ListaCancionesActivity extends ListActivity {
                 int num = getApplicationContext().getResources().getInteger(R.integer.intervencion_max_canciones);
                 int[] elegida = new int[num];
                 for (int i = 0; i < num; i++) elegida[i] = canciones[position].id;
-                //int[] elegida = {canciones[position].id};
                 Intent data = new Intent();
                 data.putExtra(MainActivity.EXTRA_CANCIONES, elegida);
                 setResult(RESULT_OK, data);
@@ -118,11 +115,7 @@ public class ListaCancionesActivity extends ListActivity {
 
                 break;
             case LISTAR_CANCIONES:
-                /*int[] elegidas = {canciones[position].id};
-                Intent i = new Intent(ListaCancionesActivity.this, PlayerActivity.class);
-                i.putExtra(PlayerActivity.EXTRA_MODO, PlayerActivity.MODO.SOLO_LETRA.ordinal());
-                i.putExtra(PlayerActivity.EXTRA_CANCIONES, elegidas);*/
-                //startActivity(i);
+
                 break;
         }
     }
