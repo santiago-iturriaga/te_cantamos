@@ -2,9 +2,9 @@
 
 ## Capturas de pantalla
 
-![Pantalla principal](principal.jpeg)
+![Pantalla principal](docs/principal.jpeg)
 
-![Escuchando una canción](escuchar.jpeg)
+![Escuchando una canción](docs/escuchar.jpeg)
 
 ## Ayuda
 
