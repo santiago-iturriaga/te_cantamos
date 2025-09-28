@@ -9,9 +9,9 @@ android {
     namespace "edu.neurodesarrollomusical"
 
     defaultConfig {
-        applicationId "edu.neurodesarrollomusical"
-        minSdkVersion 14
-        targetSdkVersion 33
+        applicationId "uy.te_cantamos"
+        minSdkVersion 21
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
